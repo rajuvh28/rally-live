@@ -2,1869 +2,1744 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rally Live Information System</title>
-
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+<title>
+Army Recruitment Rally – Vijayapura – Mangalore ARO
+</title>
 <style>
+/* =====================================================
+   BASIC
+===================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fb;
-    color: #172033;
+    background: #ffffff;
+    color: #000000;
+    min-height: 100vh;
 }
-
 button,
 input,
 select,
 textarea {
     font: inherit;
 }
-
 button {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
-
-/* ================= HEADER ================= */
-
+/* =====================================================
+   HEADER
+===================================================== */
 .header {
-    background: linear-gradient(135deg, #123d68, #1769aa);
-    color: white;
-    padding: 20px;
+    background: #000000;
+    color: #ffffff;
+    padding: 14px 16px;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 20px rgba(0,0,0,.15);
+    z-index: 1000;
+    border-bottom: 3px solid #1769aa;
 }
-
 .header-inner {
     max-width: 1100px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
 }
-
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    min-width: 0;
 }
-
 .logo-icon {
-    width: 48px;
-    height: 48px;
-    background: white;
-    color: #123d68;
-    border-radius: 14px;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 22px;
 }
-
 .logo h1 {
-    font-size: 21px;
+    font-size: 17px;
+    font-weight: 900;
 }
-
 .logo p {
-    font-size: 12px;
-    opacity: .8;
+    font-size: 10px;
     margin-top: 3px;
+    opacity: .8;
 }
-
 .admin-button {
-    background: white;
-    color: #123d68;
-    border: 0;
-    border-radius: 12px;
-    padding: 11px 16px;
-    font-weight: bold;
+    border: 2px solid #ffffff;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 9px;
+    padding: 9px 12px;
+    font-size: 12px;
+    font-weight: 900;
+    white-space: nowrap;
 }
-
-/* ================= MAIN ================= */
-
+.admin-button:active {
+    background: #1769aa;
+    color: #ffffff;
+}
+/* =====================================================
+   MAIN
+===================================================== */
 .container {
+    width: 100%;
     max-width: 1100px;
     margin: auto;
-    padding: 25px 16px 60px;
+    padding: 18px 14px 45px;
 }
-
+/* =====================================================
+   HERO
+===================================================== */
 .hero {
-    background: white;
-    border-radius: 22px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 25px rgba(30,50,80,.08);
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
 }
-
 .hero h2 {
-    font-size: 28px;
+    font-size: 23px;
+    font-weight: 900;
     margin-bottom: 7px;
 }
-
 .hero p {
-    color: #697386;
+    color: #000000;
+    font-size: 13px;
+    line-height: 1.5;
 }
-
-/* ================= STATUS ================= */
-
+/* =====================================================
+   STATUS
+===================================================== */
 .status-card {
-    border-radius: 22px;
-    padding: 25px;
-    margin-bottom: 20px;
-    color: white;
-    background: #607d8b;
-    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    background: #000000;
+    border: 2px solid #000000;
 }
-
 .status-card.open {
-    background: linear-gradient(135deg, #16894d, #29b765);
+    background: #008f39;
 }
-
 .status-card.ready {
-    background: linear-gradient(135deg, #e59b13, #f4b52e);
+    background: #1769aa;
 }
-
 .status-card.running {
-    background: linear-gradient(135deg, #1267b1, #208fe0);
+    background: #1769aa;
 }
-
 .status-card.closed {
-    background: linear-gradient(135deg, #68717d, #424952);
+    background: #000000;
 }
-
 .status-card.waiting {
-    background: linear-gradient(135deg, #607d8b, #78909c);
+    background: #000000;
 }
-
 .status-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 }
-
 .status-title {
-    font-size: 14px;
+    font-size: 12px;
+    font-weight: 800;
     opacity: .9;
 }
-
 .status-value {
-    font-size: 32px;
-    font-weight: 800;
-    margin-top: 5px;
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 4px;
 }
-
+/* =====================================================
+   LIVE BLINK
+===================================================== */
 .live-dot {
     display: flex;
     align-items: center;
     gap: 7px;
-    font-size: 13px;
+    font-size: 12px;
+    font-weight: 900;
+    background: rgba(0,0,0,.3);
+    padding: 7px 10px;
+    border-radius: 20px;
 }
-
 .dot {
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    background: #fff;
-    animation: pulse 1.2s infinite;
+    background: #ff0000;
+    animation: liveBlink 1s infinite;
 }
-
-@keyframes pulse {
-    0%, 100% {
+@keyframes liveBlink {
+    0% {
         opacity: 1;
         transform: scale(1);
+        box-shadow:
+        0 0 0 0 rgba(255,0,0,.8);
     }
-
     50% {
-        opacity: .35;
-        transform: scale(.75);
+        opacity: .25;
+        transform: scale(.7);
+        box-shadow:
+        0 0 0 7px rgba(255,0,0,0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow:
+        0 0 0 0 rgba(255,0,0,0);
     }
 }
-
-/* ================= GRID ================= */
-
+/* =====================================================
+   GRID
+===================================================== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    margin-bottom: 20px;
+    grid-template-columns:
+    repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
 }
-
 .card {
-    background: white;
-    border-radius: 20px;
-    padding: 21px;
-    box-shadow: 0 5px 25px rgba(30,50,80,.07);
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 17px;
+    min-width: 0;
 }
-
 .card-label {
-    color: #7b8494;
-    font-size: 13px;
-    margin-bottom: 7px;
+    color: #000000;
+    font-size: 11px;
+    font-weight: 900;
+    margin-bottom: 6px;
+    text-transform: uppercase;
 }
-
 .card-value {
-    font-size: 23px;
-    font-weight: 750;
+    font-size: 21px;
+    font-weight: 900;
+    word-break: break-word;
 }
-
-.card-small {
-    color: #7b8494;
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-/* ================= COUNTDOWN ================= */
-
+/* =====================================================
+   COUNTDOWN
+===================================================== */
 .countdown-card {
-    background: #172033;
-    color: white;
-    border-radius: 22px;
-    padding: 25px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 22px 15px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-
 .countdown-label {
-    font-size: 14px;
-    opacity: .75;
+    font-size: 13px;
+    font-weight: 700;
 }
-
 .countdown {
-    font-size: 42px;
-    font-weight: 800;
+    color: #ffffff;
+    font-size: 39px;
+    font-weight: 900;
     margin-top: 7px;
     letter-spacing: 2px;
+    font-variant-numeric:
+    tabular-nums;
 }
-
-/* ================= NOTICE ================= */
-
+/* =====================================================
+   NOTICE
+===================================================== */
 .notice {
-    background: #fff8df;
-    border-left: 6px solid #f0ad16;
+    background: #ffffff;
+    border: 2px solid #ff0000;
+    border-left: 7px solid #ff0000;
+    border-radius: 14px;
+    padding: 17px;
+    margin-bottom: 15px;
+}
+.notice-title {
+    color: #ff0000;
+    font-weight: 900;
+    margin-bottom: 7px;
+}
+.notice-text {
+    color: #000000;
+    line-height: 1.55;
+    font-size: 14px;
+}
+/* =====================================================
+   TIMELINE
+===================================================== */
+.timeline {
+    background: #ffffff;
+    border: 2px solid #000000;
     border-radius: 16px;
     padding: 20px;
-    margin-bottom: 20px;
 }
-
-.notice-title {
-    font-weight: 800;
-    margin-bottom: 8px;
-}
-
-.notice-text {
-    line-height: 1.6;
-    color: #555;
-}
-
-/* ================= TIMELINE ================= */
-
-.timeline {
-    background: white;
-    border-radius: 22px;
-    padding: 24px;
-    box-shadow: 0 5px 25px rgba(30,50,80,.07);
-}
-
 .timeline h3 {
+    font-size: 18px;
     margin-bottom: 20px;
 }
-
 .timeline-item {
     display: flex;
-    gap: 15px;
-    padding-bottom: 20px;
+    gap: 12px;
+    padding-bottom: 19px;
     position: relative;
 }
-
 .timeline-item:last-child {
     padding-bottom: 0;
 }
-
+.timeline-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 38px;
+    bottom: 0;
+    width: 2px;
+    background: #000000;
+}
 .timeline-icon {
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
+    width: 37px;
+    height: 37px;
+    min-width: 37px;
     border-radius: 50%;
-    background: #e8f2fc;
-    color: #1267b1;
+    background: #1769aa;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: 900;
+    position: relative;
+    z-index: 2;
 }
-
 .timeline-content strong {
     display: block;
     margin-bottom: 4px;
-}
-
-.timeline-content span {
-    color: #687386;
     font-size: 14px;
 }
-
-/* ================= ADMIN ================= */
-
+.timeline-content span {
+    color: #000000;
+    font-size: 13px;
+}
+/* =====================================================
+   ADMIN
+===================================================== */
 #adminPage {
     display: none;
 }
-
 .admin-box {
-    background: white;
-    border-radius: 22px;
-    padding: 25px;
-    box-shadow: 0 5px 25px rgba(30,50,80,.08);
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+.admin-box h2 {
+    font-size: 21px;
+    margin-bottom: 7px;
+}
+.admin-box p {
+    color: #000000;
+    font-size: 13px;
+    line-height: 1.5;
     margin-bottom: 20px;
 }
-
-.admin-box h2 {
-    margin-bottom: 8px;
-}
-
-.admin-box p {
-    color: #727b8b;
-    margin-bottom: 22px;
-}
-
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    grid-template-columns:
+    repeat(2, 1fr);
+    gap: 14px;
 }
-
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
-
 .form-group.full {
     grid-column: 1 / -1;
 }
-
 .form-group label {
-    font-weight: bold;
-    font-size: 13px;
+    font-weight: 900;
+    font-size: 12px;
 }
-
 .form-group input,
 .form-group select,
 .form-group textarea {
     width: 100%;
-    border: 1px solid #d7dde7;
-    border-radius: 12px;
-    padding: 13px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 12px;
     outline: none;
-    background: #fafbfd;
+    background: #ffffff;
+    color: #000000;
 }
-
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     border-color: #1769aa;
 }
-
 textarea {
-    min-height: 110px;
+    min-height: 105px;
     resize: vertical;
 }
-
+/* =====================================================
+   STATUS BUTTONS
+===================================================== */
 .status-buttons {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+    repeat(4, 1fr);
     gap: 8px;
 }
-
 .status-btn {
-    border: 1px solid #d5dce5;
-    background: white;
-    border-radius: 10px;
+    border: 2px solid #000000;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 9px;
     padding: 11px 5px;
-    font-weight: bold;
+    font-weight: 900;
+    font-size: 12px;
 }
-
 .status-btn.selected {
     background: #1769aa;
-    color: white;
+    color: #ffffff;
     border-color: #1769aa;
 }
-
+.status-btn[data-status="OPEN"].selected {
+    background: #008f39;
+    border-color: #008f39;
+}
+.status-btn[data-status="CLOSED"].selected {
+    background: #000000;
+    border-color: #000000;
+}
+/* =====================================================
+   ADMIN ACTIONS
+===================================================== */
 .publish {
-    margin-top: 20px;
+    margin-top: 18px;
     width: 100%;
     background: #1769aa;
-    color: white;
-    border: 0;
-    border-radius: 14px;
-    padding: 15px;
-    font-weight: bold;
-    font-size: 16px;
+    color: #ffffff;
+    border: 2px solid #1769aa;
+    border-radius: 11px;
+    padding: 14px;
+    font-weight: 900;
+    font-size: 15px;
 }
-
+.publish:active {
+    background: #000000;
+    border-color: #000000;
+}
 .logout {
-    margin-top: 10px;
+    margin-top: 9px;
     width: 100%;
-    background: #eef1f5;
-    color: #263247;
-    border: 0;
-    border-radius: 14px;
-    padding: 13px;
-    font-weight: bold;
+    background: #ffffff;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    border-radius: 11px;
+    padding: 12px;
+    font-weight: 900;
 }
-
-/* ================= LOGIN ================= */
-
+/* =====================================================
+   LOGIN
+===================================================== */
 .login-box {
     max-width: 450px;
-    margin: 50px auto;
+    margin: 25px auto;
 }
-
 .login-box input {
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
-
+/* =====================================================
+   MESSAGES
+===================================================== */
 .error {
-    background: #ffe7e7;
-    color: #b42318;
-    padding: 12px;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    background: #ffffff;
+    color: #ff0000;
+    border: 2px solid #ff0000;
+    padding: 11px;
+    border-radius: 9px;
+    margin-bottom: 14px;
     display: none;
+    font-size: 13px;
+    font-weight: 700;
 }
-
 .success {
-    background: #e4f8ec;
-    color: #087443;
-    padding: 12px;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    background: #ffffff;
+    color: #008f39;
+    border: 2px solid #008f39;
+    padding: 11px;
+    border-radius: 9px;
+    margin-bottom: 14px;
     display: none;
+    font-size: 13px;
+    font-weight: 700;
 }
-
-/* ================= FOOTER ================= */
-
+/* =====================================================
+   FOOTER
+===================================================== */
 .footer {
     text-align: center;
-    color: #8992a2;
-    font-size: 12px;
-    padding: 30px 15px;
+    color: #000000;
+    font-size: 11px;
+    padding: 25px 15px;
+    border-top: 2px solid #000000;
 }
-
-/* ================= MOBILE ================= */
-
+/* =====================================================
+   MOBILE
+===================================================== */
 @media (max-width: 700px) {
-
     .header {
-        padding: 15px;
+        padding: 11px 12px;
     }
-
-    .logo h1 {
-        font-size: 17px;
-    }
-
     .logo-icon {
-        width: 42px;
-        height: 42px;
+        width: 39px;
+        height: 39px;
+        font-size: 20px;
     }
-
+    .logo h1 {
+        font-size: 14px;
+    }
+    .logo p {
+        font-size: 8px;
+    }
     .admin-button {
-        padding: 9px 11px;
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+    .container {
+        padding:
+        14px 10px 35px;
+    }
+    .hero {
+        padding: 17px;
+        border-radius: 14px;
+    }
+    .hero h2 {
+        font-size: 20px;
+    }
+    .hero p {
         font-size: 12px;
     }
-
-    .container {
-        padding: 18px 12px 40px;
+    .status-card {
+        padding: 17px;
+        border-radius: 14px;
     }
-
-    .hero {
-        padding: 20px;
-    }
-
-    .hero h2 {
-        font-size: 23px;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .form-group.full {
-        grid-column: auto;
-    }
-
-    .status-buttons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .status-value {
         font-size: 26px;
     }
-
+    .live-dot {
+        font-size: 10px;
+        padding: 6px 8px;
+    }
+    .dot {
+        width: 9px;
+        height: 9px;
+    }
+    .grid {
+        grid-template-columns:
+        1fr 1fr;
+        gap: 9px;
+    }
+    .card {
+        padding: 14px;
+        border-radius: 13px;
+    }
+    .card-label {
+        font-size: 9px;
+    }
+    .card-value {
+        font-size: 18px;
+    }
+    .countdown-card {
+        padding: 19px 10px;
+    }
     .countdown {
-        font-size: 31px;
+        font-size: 29px;
+        letter-spacing: 1px;
+    }
+    .notice {
+        padding: 14px;
+    }
+    .notice-text {
+        font-size: 13px;
+    }
+    .timeline {
+        padding: 16px;
+    }
+    .timeline h3 {
+        font-size: 17px;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-group.full {
+        grid-column: auto;
+    }
+    .status-buttons {
+        grid-template-columns:
+        1fr 1fr;
+    }
+    .admin-box {
+        padding: 16px;
+        border-radius: 14px;
+    }
+}
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+@media (max-width: 380px) {
+    .logo p {
+        display: none;
+    }
+    .logo h1 {
+        font-size: 13px;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .countdown {
+        font-size: 26px;
+    }
+    .status-value {
+        font-size: 24px;
     }
 }
 </style>
 </head>
-
 <body>
-
-<!-- ================= HEADER ================= -->
-
+<!-- =====================================================
+     HEADER
+===================================================== -->
 <header class="header">
-
 <div class="header-inner">
-
 <div class="logo">
-
-<div class="logo-icon">🪖</div>
-
+<div class="logo-icon">
+🪖
+</div>
 <div>
-<h1>Rally Live</h1>
-<p>Rally Information System</p>
-</div>
-
-</div>
-
-<button class="admin-button" onclick="showAdmin()">
-🔐 Admin
-</button>
-
-</div>
-
-</header>
-
-
-<!-- ================= CANDIDATE PAGE ================= -->
-
-<main id="candidatePage" class="container">
-
-<section class="hero">
-
-<h2>Live Rally Information</h2>
-
+<h1>
+ARMY RECRUITMENT RALLY
+</h1>
 <p>
-View the current rally status, batch information,
+VIJAYAPURA • MANGALORE ARO
+</p>
+</div>
+</div>
+<button
+class="admin-button"
+onclick="showAdmin()">
+🔐 ADMIN
+</button>
+</div>
+</header>
+<!-- =====================================================
+     CANDIDATE PAGE
+===================================================== -->
+<main
+id="candidatePage"
+class="container">
+<section class="hero">
+<h2>
+ARMY RECRUITMENT RALLY
+</h2>
+<p>
+VIJAYAPURA • MANGALORE ARO
+</p>
+<p style="margin-top:6px;">
+Live rally status, batch information,
 timings and important notices.
 </p>
-
 </section>
-
-
 <!-- STATUS -->
-
-<section id="statusCard" class="status-card waiting">
-
+<section
+id="statusCard"
+class="status-card waiting">
 <div class="status-top">
-
 <div>
-
 <div class="status-title">
-GROUND STATUS
+ARMY RECRUITMENT RALLY • GROUND STATUS
 </div>
-
-<div id="groundStatus" class="status-value">
+<div
+id="groundStatus"
+class="status-value">
 WAITING
 </div>
-
 </div>
-
 <div class="live-dot">
-
 <span class="dot"></span>
-
 LIVE
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- CURRENT INFORMATION -->
-
 <section class="grid">
-
 <div class="card">
-
 <div class="card-label">
 CURRENT BATCH
 </div>
-
-<div id="currentBatch" class="card-value">
+<div
+id="currentBatch"
+class="card-value">
 Waiting
 </div>
-
 </div>
-
-
 <div class="card">
-
 <div class="card-label">
 TRADE
 </div>
-
-<div id="trade" class="card-value">
+<div
+id="trade"
+class="card-value">
 -
 </div>
-
 </div>
-
-
 <div class="card">
-
 <div class="card-label">
 DISTRICT
 </div>
-
-<div id="district" class="card-value">
+<div
+id="district"
+class="card-value">
 -
 </div>
-
 </div>
-
-
 <div class="card">
-
 <div class="card-label">
 RALLY DATE
 </div>
-
-<div id="rallyDate" class="card-value">
+<div
+id="rallyDate"
+class="card-value">
 -
 </div>
-
 </div>
-
 </section>
-
-
 <!-- COUNTDOWN -->
-
 <section class="countdown-card">
-
-<div id="countdownLabel" class="countdown-label">
-Next event
+<div
+id="countdownLabel"
+class="countdown-label">
+NEXT ARMY RECRUITMENT RALLY EVENT
 </div>
-
-<div id="countdown" class="countdown">
+<div
+id="countdown"
+class="countdown">
 --:--:--
 </div>
-
 </section>
-
-
-<!-- TIMING INFORMATION -->
-
+<!-- TIMINGS -->
 <section class="grid">
-
 <div class="card">
-
 <div class="card-label">
 CANDIDATES GET READY
 </div>
-
-<div id="readyTime" class="card-value">
+<div
+id="readyTime"
+class="card-value">
 -
 </div>
-
 </div>
-
-
 <div class="card">
-
 <div class="card-label">
 ROUND STARTS
 </div>
-
-<div id="startTime" class="card-value">
+<div
+id="startTime"
+class="card-value">
 -
 </div>
-
 </div>
-
-
 <div class="card">
-
 <div class="card-label">
 ROUND ENDS
 </div>
-
-<div id="endTime" class="card-value">
+<div
+id="endTime"
+class="card-value">
 -
 </div>
-
 </div>
-
-
 <div class="card">
-
 <div class="card-label">
 GROUND CLOSES
 </div>
-
-<div id="closeTime" class="card-value">
+<div
+id="closeTime"
+class="card-value">
 -
 </div>
-
 </div>
-
 </section>
-
-
 <!-- NEXT BATCH -->
-
-<section class="card" style="margin-bottom:20px">
-
+<section
+class="card"
+style="margin-bottom:15px">
 <div class="card-label">
 NEXT BATCH
 </div>
-
-<div id="nextBatch" class="card-value">
+<div
+id="nextBatch"
+class="card-value">
 -
 </div>
-
 </section>
-
-
 <!-- NOTICE -->
-
 <section class="notice">
-
 <div class="notice-title">
-📢 IMPORTANT NOTICE
+📢 IMPORTANT ARMY RECRUITMENT RALLY NOTICE
 </div>
-
-<div id="noticeText" class="notice-text">
+<div
+id="noticeText"
+class="notice-text">
 No new notice.
 </div>
-
 </section>
-
-
 <!-- TIMELINE -->
-
 <section class="timeline">
-
-<h3>Today's Timeline</h3>
-
+<h3>
+ARMY RECRUITMENT RALLY • TODAY'S TIMELINE
+</h3>
 <div class="timeline-item">
-
-<div class="timeline-icon">1</div>
-
+<div class="timeline-icon">
+1
+</div>
 <div class="timeline-content">
-
-<strong>Ground Opens</strong>
-
-<span id="timelineOpen">-</span>
-
+<strong>
+Ground Opens
+</strong>
+<span id="timelineOpen">
+-
+</span>
 </div>
-
 </div>
-
-
 <div class="timeline-item">
-
-<div class="timeline-icon">2</div>
-
+<div class="timeline-icon">
+2
+</div>
 <div class="timeline-content">
-
-<strong>Candidates Get Ready</strong>
-
-<span id="timelineReady">-</span>
-
+<strong>
+Candidates Get Ready
+</strong>
+<span id="timelineReady">
+-
+</span>
 </div>
-
 </div>
-
-
 <div class="timeline-item">
-
-<div class="timeline-icon">3</div>
-
+<div class="timeline-icon">
+3
+</div>
 <div class="timeline-content">
-
-<strong>Round Starts</strong>
-
-<span id="timelineStart">-</span>
-
+<strong>
+Round Starts
+</strong>
+<span id="timelineStart">
+-
+</span>
 </div>
-
 </div>
-
-
 <div class="timeline-item">
-
-<div class="timeline-icon">4</div>
-
+<div class="timeline-icon">
+4
+</div>
 <div class="timeline-content">
-
-<strong>Round Ends</strong>
-
-<span id="timelineEnd">-</span>
-
+<strong>
+Round Ends
+</strong>
+<span id="timelineEnd">
+-
+</span>
 </div>
-
 </div>
-
-
 <div class="timeline-item">
-
-<div class="timeline-icon">5</div>
-
+<div class="timeline-icon">
+5
+</div>
 <div class="timeline-content">
-
-<strong>Ground Closes</strong>
-
-<span id="timelineClose">-</span>
-
+<strong>
+Ground Closes
+</strong>
+<span id="timelineClose">
+-
+</span>
 </div>
-
 </div>
-
 </section>
-
 </main>
-
-
-<!-- ================= ADMIN PAGE ================= -->
-
-<main id="adminPage" class="container">
-
+<!-- =====================================================
+     ADMIN PAGE
+===================================================== -->
+<main
+id="adminPage"
+class="container">
 <!-- LOGIN -->
-
-<section id="loginSection" class="admin-box login-box">
-
-<h2>🔐 Admin Login</h2>
-
+<section
+id="loginSection"
+class="admin-box login-box">
+<h2>
+🔐 ARMY RECRUITMENT RALLY ADMIN
+</h2>
 <p>
-Only the authorized administrator can update rally information.
+VIJAYAPURA • MANGALORE ARO
+<br><br>
+Only the authorized administrator can
+update rally information.
 </p>
-
-<div id="loginError" class="error"></div>
-
+<div
+id="loginError"
+class="error">
+</div>
 <div class="form-group">
-
-<label>Email</label>
-
+<label>
+ADMIN EMAIL
+</label>
 <input
 type="email"
 id="loginEmail"
 placeholder="Admin email"
->
-
+autocomplete="email">
 </div>
-
 <br>
-
 <div class="form-group">
-
-<label>Password</label>
-
+<label>
+PASSWORD
+</label>
 <input
 type="password"
 id="loginPassword"
 placeholder="Admin password"
->
-
+autocomplete="current-password">
 </div>
-
-<button class="publish" onclick="loginAdmin()">
-Login to Admin Panel
+<button
+class="publish"
+onclick="loginAdmin()">
+LOGIN TO RALLY ADMIN PANEL
 </button>
-
 </section>
-
-
 <!-- ADMIN PANEL -->
-
-<section id="panelSection" style="display:none">
-
+<section
+id="panelSection"
+style="display:none">
 <div class="admin-box">
-
-<h2>⚙️ Rally Control Panel</h2>
-
+<h2>
+⚙️ ARMY RECRUITMENT RALLY CONTROL PANEL
+</h2>
 <p>
-Update the information below. Candidates will receive
-the changes automatically.
+VIJAYAPURA • MANGALORE ARO
+<br>
+Update rally information and publish
+live updates for candidates.
 </p>
-
-<div id="updateSuccess" class="success">
-Update published successfully.
+<div
+id="updateSuccess"
+class="success">
+Army Recruitment Rally update
+published successfully.
 </div>
-
-<div id="updateError" class="error"></div>
-
-
+<div
+id="updateError"
+class="error">
+</div>
 <div class="form-grid">
-
 <div class="form-group">
-
-<label>Current Batch</label>
-
+<label>
+CURRENT BATCH
+</label>
 <input
 id="adminBatch"
-placeholder="Example: Batch 03"
->
-
+placeholder="Example: Batch 03">
 </div>
-
-
 <div class="form-group">
-
-<label>Trade</label>
-
+<label>
+TRADE
+</label>
 <input
 id="adminTrade"
-placeholder="Example: GD"
->
-
+placeholder="Example: GD">
 </div>
-
-
 <div class="form-group">
-
-<label>District</label>
-
+<label>
+DISTRICT
+</label>
 <input
 id="adminDistrict"
-placeholder="Example: Vijayapura"
->
-
+placeholder="Example: Vijayapura">
 </div>
-
-
 <div class="form-group">
-
-<label>Next Batch</label>
-
+<label>
+NEXT BATCH
+</label>
 <input
 id="adminNextBatch"
-placeholder="Example: Batch 04"
->
-
+placeholder="Example: Batch 04">
 </div>
-
-
 <div class="form-group">
-
-<label>Rally Date</label>
-
+<label>
+RALLY DATE
+</label>
 <input
 type="date"
-id="adminDate"
->
-
+id="adminDate">
 </div>
-
-
 <div class="form-group">
-
-<label>Ground Opens</label>
-
+<label>
+GROUND OPENS
+</label>
 <input
 type="time"
-id="adminOpen"
->
-
+id="adminOpen">
 </div>
-
-
 <div class="form-group">
-
-<label>Candidates Get Ready</label>
-
+<label>
+CANDIDATES GET READY
+</label>
 <input
 type="time"
-id="adminReady"
->
-
+id="adminReady">
 </div>
-
-
 <div class="form-group">
-
-<label>Round Starts</label>
-
+<label>
+ROUND STARTS
+</label>
 <input
 type="time"
-id="adminStart"
->
-
+id="adminStart">
 </div>
-
-
 <div class="form-group">
-
-<label>Round Ends</label>
-
+<label>
+ROUND ENDS
+</label>
 <input
 type="time"
-id="adminEnd"
->
-
+id="adminEnd">
 </div>
-
-
 <div class="form-group">
-
-<label>Ground Closes</label>
-
+<label>
+GROUND CLOSES
+</label>
 <input
 type="time"
-id="adminClose"
->
-
+id="adminClose">
 </div>
-
-
 <div class="form-group full">
-
-<label>Ground Status</label>
-
+<label>
+GROUND STATUS
+</label>
 <div class="status-buttons">
-
 <button
 class="status-btn"
 data-status="OPEN"
 onclick="selectStatus('OPEN', this)">
 🟢 OPEN
 </button>
-
 <button
 class="status-btn"
 data-status="READY"
 onclick="selectStatus('READY', this)">
-🟡 READY
+🔵 READY
 </button>
-
 <button
 class="status-btn"
 data-status="RUNNING"
 onclick="selectStatus('RUNNING', this)">
 🔵 RUNNING
 </button>
-
 <button
 class="status-btn"
 data-status="CLOSED"
 onclick="selectStatus('CLOSED', this)">
 ⚫ CLOSED
 </button>
-
 </div>
-
 </div>
-
-
 <div class="form-group full">
-
-<label>Important Notice</label>
-
+<label>
+IMPORTANT NOTICE
+</label>
 <textarea
 id="adminNotice"
-placeholder="Example: Batch 03 candidates report at Gate 2 immediately."
-></textarea>
-
+placeholder="Example: Batch 03 candidates report at Gate 2 immediately.">
+</textarea>
 </div>
-
 </div>
-
-
 <button
 class="publish"
 onclick="publishUpdate()">
-📢 Publish Live Update
+📢 PUBLISH ARMY RECRUITMENT RALLY LIVE UPDATE
 </button>
-
-
 <button
 class="logout"
 onclick="logoutAdmin()">
-Logout
+LOGOUT ADMIN
 </button>
-
 </div>
-
 </section>
-
 </main>
-
-
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 <footer class="footer">
-Rally Live Information System • Live updates powered by Firebase
+<strong>
+ARMY RECRUITMENT RALLY
+</strong>
+<br>
+VIJAYAPURA • MANGALORE ARO
+<br><br>
+Rally Live Information System
 </footer>
-
-
-<!-- ================= FIREBASE ================= -->
-
+<!-- =====================================================
+     FIREBASE
+===================================================== -->
 <script type="module">
-
-/* ==========================================
+/* =====================================================
    FIREBASE IMPORTS
-========================================== */
-
+===================================================== */
 import {
     initializeApp
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-
+} from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import {
     getAuth,
     signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
+} from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 import {
     getFirestore,
     doc,
     setDoc,
     onSnapshot
-} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-
-
-/* ==========================================
-   FIREBASE CONFIGURATION
-========================================== */
-
+} from
+"https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
 const firebaseConfig = {
-
     apiKey:
     "AIzaSyCFMavQVbQy6JTKBi_FBqTNbfCHzX1xGeY",
-
     authDomain:
     "rally-live-18bd3.firebaseapp.com",
-
     projectId:
     "rally-live-18bd3",
-
     storageBucket:
     "rally-live-18bd3.firebasestorage.app",
-
     messagingSenderId:
     "34583171169",
-
     appId:
     "1:34583171169:web:4febab1730032f16821a20",
-
     measurementId:
     "G-E43E8ZQH9X"
 };
-
-
-/* ==========================================
+/* =====================================================
    INITIALIZE FIREBASE
-========================================== */
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-const db = getFirestore(app);
-
-
-/* ==========================================
-   DATABASE DOCUMENT
-========================================== */
-
-const rallyRef = doc(db, "rally", "live");
-
-
-/* ==========================================
+===================================================== */
+const app =
+initializeApp(firebaseConfig);
+const auth =
+getAuth(app);
+const db =
+getFirestore(app);
+/* =====================================================
+   DATABASE
+===================================================== */
+const rallyRef =
+doc(db, "rally", "live");
+/* =====================================================
    ADMIN UID
-========================================== */
-
+===================================================== */
 const ADMIN_UID =
 "N9mUoFaAb2alsKEL7vTojGEUsXu1";
-
-
-/* ==========================================
+/* =====================================================
    CURRENT STATUS
-========================================== */
-
-let selectedStatus = "OPEN";
-
-
-/* ==========================================
+===================================================== */
+let selectedStatus =
+"OPEN";
+/* =====================================================
    PAGE MODE
-========================================== */
-
+===================================================== */
 const isAdminPage =
 window.location.search.includes("admin");
-
-
 if (isAdminPage) {
-
-    document.getElementById("candidatePage").style.display =
-    "none";
-
-    document.getElementById("adminPage").style.display =
-    "block";
+    document.getElementById(
+        "candidatePage"
+    ).style.display = "none";
+    document.getElementById(
+        "adminPage"
+    ).style.display = "block";
 }
-
-
-/* ==========================================
+/* =====================================================
    SHOW ADMIN
-========================================== */
-
-window.showAdmin = function() {
-
+===================================================== */
+window.showAdmin =
+function() {
     window.location.href =
     window.location.pathname + "?admin";
-
 };
-
-
-/* ==========================================
+/* =====================================================
    ADMIN LOGIN
-========================================== */
-
-window.loginAdmin = async function() {
-
+===================================================== */
+window.loginAdmin =
+async function() {
     const email =
-    document.getElementById("loginEmail").value.trim();
-
+    document.getElementById(
+        "loginEmail"
+    ).value.trim();
     const password =
-    document.getElementById("loginPassword").value;
-
+    document.getElementById(
+        "loginPassword"
+    ).value;
     const error =
-    document.getElementById("loginError");
-
-    error.style.display = "none";
-
+    document.getElementById(
+        "loginError"
+    );
+    error.style.display =
+    "none";
     if (!email || !password) {
-
         error.textContent =
         "Please enter email and password.";
-
         error.style.display =
         "block";
-
         return;
     }
-
     try {
-
         await signInWithEmailAndPassword(
             auth,
             email,
             password
         );
-
-    } catch (error) {
-
+    }
+    catch (error) {
         console.error(error);
-
-        document.getElementById("loginError").textContent =
+        document.getElementById(
+            "loginError"
+        ).textContent =
         "Login failed. Please check your email and password.";
-
-        document.getElementById("loginError").style.display =
+        document.getElementById(
+            "loginError"
+        ).style.display =
         "block";
     }
 };
-
-
-/* ==========================================
+/* =====================================================
    AUTH STATE
-========================================== */
-
-onAuthStateChanged(auth, (user) => {
-
-    if (!isAdminPage) return;
-
-    const login =
-    document.getElementById("loginSection");
-
-    const panel =
-    document.getElementById("panelSection");
-
-
-    if (user && user.uid === ADMIN_UID) {
-
-        login.style.display = "none";
-
-        panel.style.display = "block";
-
-        loadAdminData();
-
-    } else {
-
-        login.style.display = "block";
-
-        panel.style.display = "none";
-
+===================================================== */
+onAuthStateChanged(
+    auth,
+    (user) => {
+        if (!isAdminPage)
+            return;
+        const login =
+        document.getElementById(
+            "loginSection"
+        );
+        const panel =
+        document.getElementById(
+            "panelSection"
+        );
+        if (
+            user &&
+            user.uid === ADMIN_UID
+        ) {
+            login.style.display =
+            "none";
+            panel.style.display =
+            "block";
+            loadAdminData();
+        }
+        else {
+            login.style.display =
+            "block";
+            panel.style.display =
+            "none";
+        }
     }
-
-});
-
-
-/* ==========================================
+);
+/* =====================================================
    LOGOUT
-========================================== */
-
-window.logoutAdmin = async function() {
-
+===================================================== */
+window.logoutAdmin =
+async function() {
     await signOut(auth);
-
     window.location.href =
     window.location.pathname;
-
 };
-
-
-/* ==========================================
-   STATUS SELECT
-========================================== */
-
-window.selectStatus = function(status, button) {
-
-    selectedStatus = status;
-
+/* =====================================================
+   SELECT STATUS
+===================================================== */
+window.selectStatus =
+function(status, button) {
+    selectedStatus =
+    status;
     document
     .querySelectorAll(".status-btn")
     .forEach(btn => {
-
-        btn.classList.remove("selected");
-
+        btn.classList.remove(
+            "selected"
+        );
     });
-
-    button.classList.add("selected");
+    button.classList.add(
+        "selected"
+    );
 };
-
-
-/* ==========================================
+/* =====================================================
    PUBLISH UPDATE
-========================================== */
-
-window.publishUpdate = async function() {
-
-    const user = auth.currentUser;
-
-    if (!user || user.uid !== ADMIN_UID) {
-
+===================================================== */
+window.publishUpdate =
+async function() {
+    const user =
+    auth.currentUser;
+    if (
+        !user ||
+        user.uid !== ADMIN_UID
+    ) {
         showUpdateError(
             "You are not authorized to update the rally."
         );
-
         return;
     }
-
-
     const data = {
-
         currentBatch:
-        document.getElementById("adminBatch").value.trim(),
-
+        document.getElementById(
+            "adminBatch"
+        ).value.trim(),
         trade:
-        document.getElementById("adminTrade").value.trim(),
-
+        document.getElementById(
+            "adminTrade"
+        ).value.trim(),
         district:
-        document.getElementById("adminDistrict").value.trim(),
-
+        document.getElementById(
+            "adminDistrict"
+        ).value.trim(),
         nextBatch:
-        document.getElementById("adminNextBatch").value.trim(),
-
+        document.getElementById(
+            "adminNextBatch"
+        ).value.trim(),
         rallyDate:
-        document.getElementById("adminDate").value,
-
+        document.getElementById(
+            "adminDate"
+        ).value,
         groundOpen:
-        document.getElementById("adminOpen").value,
-
+        document.getElementById(
+            "adminOpen"
+        ).value,
         readyTime:
-        document.getElementById("adminReady").value,
-
+        document.getElementById(
+            "adminReady"
+        ).value,
         roundStart:
-        document.getElementById("adminStart").value,
-
+        document.getElementById(
+            "adminStart"
+        ).value,
         roundEnd:
-        document.getElementById("adminEnd").value,
-
+        document.getElementById(
+            "adminEnd"
+        ).value,
         groundClose:
-        document.getElementById("adminClose").value,
-
+        document.getElementById(
+            "adminClose"
+        ).value,
         groundStatus:
         selectedStatus,
-
         notice:
-        document.getElementById("adminNotice").value.trim(),
-
+        document.getElementById(
+            "adminNotice"
+        ).value.trim(),
         updatedAt:
         new Date().toISOString()
-
     };
-
-
     try {
-
-        await setDoc(rallyRef, data);
-
-        document.getElementById("updateSuccess")
-        .style.display = "block";
-
-        document.getElementById("updateError")
-        .style.display = "none";
-
-
+        await setDoc(
+            rallyRef,
+            data
+        );
+        document.getElementById(
+            "updateSuccess"
+        ).style.display =
+        "block";
+        document.getElementById(
+            "updateError"
+        ).style.display =
+        "none";
         setTimeout(() => {
-
-            document.getElementById("updateSuccess")
-            .style.display = "none";
-
+            document.getElementById(
+                "updateSuccess"
+            ).style.display =
+            "none";
         }, 3000);
-
-
-    } catch (error) {
-
+    }
+    catch (error) {
         console.error(error);
-
         showUpdateError(
             "Could not publish update: " +
             error.message
         );
-
     }
-
 };
-
-
-/* ==========================================
+/* =====================================================
    LOAD ADMIN DATA
-========================================== */
-
+===================================================== */
 function loadAdminData() {
-
-    onSnapshot(rallyRef, (snapshot) => {
-
-        if (!snapshot.exists()) return;
-
-        const d = snapshot.data();
-
-
-        document.getElementById("adminBatch").value =
-        d.currentBatch || "";
-
-        document.getElementById("adminTrade").value =
-        d.trade || "";
-
-        document.getElementById("adminDistrict").value =
-        d.district || "";
-
-        document.getElementById("adminNextBatch").value =
-        d.nextBatch || "";
-
-        document.getElementById("adminDate").value =
-        d.rallyDate || "";
-
-        document.getElementById("adminOpen").value =
-        d.groundOpen || "";
-
-        document.getElementById("adminReady").value =
-        d.readyTime || "";
-
-        document.getElementById("adminStart").value =
-        d.roundStart || "";
-
-        document.getElementById("adminEnd").value =
-        d.roundEnd || "";
-
-        document.getElementById("adminClose").value =
-        d.groundClose || "";
-
-        document.getElementById("adminNotice").value =
-        d.notice || "";
-
-
-        selectedStatus =
-        d.groundStatus || "OPEN";
-
-
-        document
-        .querySelectorAll(".status-btn")
-        .forEach(btn => {
-
-            btn.classList.toggle(
-                "selected",
-                btn.dataset.status === selectedStatus
-            );
-
-        });
-
-    });
-
-}
-
-
-/* ==========================================
-   LIVE CANDIDATE LISTENER
-========================================== */
-
-onSnapshot(rallyRef, (snapshot) => {
-
-    if (!snapshot.exists()) return;
-
-    const d = snapshot.data();
-
-    updateCandidatePage(d);
-
-}, (error) => {
-
-    console.error(
-        "Firestore listener error:",
-        error
+    onSnapshot(
+        rallyRef,
+        (snapshot) => {
+            if (!snapshot.exists())
+                return;
+            const d =
+            snapshot.data();
+            document.getElementById(
+                "adminBatch"
+            ).value =
+            d.currentBatch || "";
+            document.getElementById(
+                "adminTrade"
+            ).value =
+            d.trade || "";
+            document.getElementById(
+                "adminDistrict"
+            ).value =
+            d.district || "";
+            document.getElementById(
+                "adminNextBatch"
+            ).value =
+            d.nextBatch || "";
+            document.getElementById(
+                "adminDate"
+            ).value =
+            d.rallyDate || "";
+            document.getElementById(
+                "adminOpen"
+            ).value =
+            d.groundOpen || "";
+            document.getElementById(
+                "adminReady"
+            ).value =
+            d.readyTime || "";
+            document.getElementById(
+                "adminStart"
+            ).value =
+            d.roundStart || "";
+            document.getElementById(
+                "adminEnd"
+            ).value =
+            d.roundEnd || "";
+            document.getElementById(
+                "adminClose"
+            ).value =
+            d.groundClose || "";
+            document.getElementById(
+                "adminNotice"
+            ).value =
+            d.notice || "";
+            selectedStatus =
+            d.groundStatus || "OPEN";
+            document
+            .querySelectorAll(".status-btn")
+            .forEach(btn => {
+                btn.classList.toggle(
+                    "selected",
+                    btn.dataset.status ===
+                    selectedStatus
+                );
+            });
+        }
     );
-
-});
-
-
-/* ==========================================
+}
+/* =====================================================
+   LIVE CANDIDATE LISTENER
+===================================================== */
+onSnapshot(
+    rallyRef,
+    (snapshot) => {
+        if (!snapshot.exists())
+            return;
+        const d =
+        snapshot.data();
+        updateCandidatePage(d);
+    },
+    (error) => {
+        console.error(
+            "Firestore listener error:",
+            error
+        );
+    }
+);
+/* =====================================================
    UPDATE CANDIDATE PAGE
-========================================== */
-
+===================================================== */
 function updateCandidatePage(d) {
-
     const status =
     d.groundStatus || "WAITING";
-
-
-    document.getElementById("groundStatus")
-    .textContent = status;
-
-
+    document.getElementById(
+        "groundStatus"
+    ).textContent =
+    status;
     const statusCard =
-    document.getElementById("statusCard");
-
+    document.getElementById(
+        "statusCard"
+    );
     statusCard.className =
     "status-card " +
     status.toLowerCase();
-
-
-    document.getElementById("currentBatch")
-    .textContent =
+    document.getElementById(
+        "currentBatch"
+    ).textContent =
     d.currentBatch || "Waiting";
-
-
-    document.getElementById("trade")
-    .textContent =
+    document.getElementById(
+        "trade"
+    ).textContent =
     d.trade || "-";
-
-
-    document.getElementById("district")
-    .textContent =
+    document.getElementById(
+        "district"
+    ).textContent =
     d.district || "-";
-
-
-    document.getElementById("rallyDate")
-    .textContent =
+    document.getElementById(
+        "rallyDate"
+    ).textContent =
     formatDate(d.rallyDate);
-
-
-    document.getElementById("readyTime")
-    .textContent =
+    document.getElementById(
+        "readyTime"
+    ).textContent =
     formatTime(d.readyTime);
-
-
-    document.getElementById("startTime")
-    .textContent =
+    document.getElementById(
+        "startTime"
+    ).textContent =
     formatTime(d.roundStart);
-
-
-    document.getElementById("endTime")
-    .textContent =
+    document.getElementById(
+        "endTime"
+    ).textContent =
     formatTime(d.roundEnd);
-
-
-    document.getElementById("closeTime")
-    .textContent =
+    document.getElementById(
+        "closeTime"
+    ).textContent =
     formatTime(d.groundClose);
-
-
-    document.getElementById("nextBatch")
-    .textContent =
+    document.getElementById(
+        "nextBatch"
+    ).textContent =
     d.nextBatch || "-";
-
-
-    document.getElementById("noticeText")
-    .textContent =
-    d.notice || "No new notice.";
-
-
-    document.getElementById("timelineOpen")
-    .textContent =
+    document.getElementById(
+        "noticeText"
+    ).textContent =
+    d.notice ||
+    "No new notice.";
+    document.getElementById(
+        "timelineOpen"
+    ).textContent =
     formatTime(d.groundOpen);
-
-
-    document.getElementById("timelineReady")
-    .textContent =
+    document.getElementById(
+        "timelineReady"
+    ).textContent =
     formatTime(d.readyTime);
-
-
-    document.getElementById("timelineStart")
-    .textContent =
+    document.getElementById(
+        "timelineStart"
+    ).textContent =
     formatTime(d.roundStart);
-
-
-    document.getElementById("timelineEnd")
-    .textContent =
+    document.getElementById(
+        "timelineEnd"
+    ).textContent =
     formatTime(d.roundEnd);
-
-
-    document.getElementById("timelineClose")
-    .textContent =
+    document.getElementById(
+        "timelineClose"
+    ).textContent =
     formatTime(d.groundClose);
-
-
     updateCountdown(d);
 }
-
-
-/* ==========================================
+/* =====================================================
    FORMAT DATE
-========================================== */
-
+===================================================== */
 function formatDate(date) {
-
-    if (!date) return "-";
-
+    if (!date)
+        return "-";
     const parts =
     date.split("-");
-
     if (parts.length !== 3)
         return date;
-
     return `${parts[2]}-${parts[1]}-${parts[0]}`;
 }
-
-
-/* ==========================================
+/* =====================================================
    FORMAT TIME
-========================================== */
-
+===================================================== */
 function formatTime(time) {
-
-    if (!time) return "-";
-
+    if (!time)
+        return "-";
     const parts =
     time.split(":");
-
     if (parts.length < 2)
         return time;
-
     let hour =
-    parseInt(parts[0], 10);
-
+    parseInt(
+        parts[0],
+        10
+    );
     const minute =
     parts[1];
-
     const ampm =
-    hour >= 12 ? "PM" : "AM";
-
+    hour >= 12
+    ? "PM"
+    : "AM";
     hour =
     hour % 12 || 12;
-
     return `${hour}:${minute} ${ampm}`;
 }
-
-
-/* ==========================================
+/* =====================================================
    COUNTDOWN
-========================================== */
-
+===================================================== */
 function updateCountdown(d) {
-
-    let targetTime = null;
-
-    let label = "Next event";
-
-
+    let targetTime =
+    null;
+    let label =
+    "Next event";
     if (
         d.groundStatus === "READY" &&
         d.roundStart
     ) {
-
         targetTime =
         createDateTime(
             d.rallyDate,
             d.roundStart
         );
-
         label =
         "Round starts in";
-
     }
-
     else if (
         d.groundStatus === "OPEN" &&
         d.readyTime
     ) {
-
         targetTime =
         createDateTime(
             d.rallyDate,
             d.readyTime
         );
-
         label =
         "Candidates get ready in";
-
     }
-
     else if (
         d.groundStatus === "RUNNING" &&
         d.roundEnd
     ) {
-
         targetTime =
         createDateTime(
             d.rallyDate,
             d.roundEnd
         );
-
         label =
         "Round ends in";
-
     }
-
     else if (
         d.groundClose
     ) {
-
         targetTime =
         createDateTime(
             d.rallyDate,
             d.groundClose
         );
-
         label =
         "Ground closes in";
-
     }
-
-
-    document.getElementById("countdownLabel")
-    .textContent = label;
-
-
+    document.getElementById(
+        "countdownLabel"
+    ).textContent =
+    label;
     if (!targetTime) {
-
-        document.getElementById("countdown")
-        .textContent = "--:--:--";
-
+        document.getElementById(
+            "countdown"
+        ).textContent =
+        "--:--:--";
         return;
     }
-
-
     function tick() {
-
         const now =
         new Date();
-
         const diff =
         targetTime.getTime() -
         now.getTime();
-
-
         if (diff <= 0) {
-
-            document.getElementById("countdown")
-            .textContent = "00:00:00";
-
+            document.getElementById(
+                "countdown"
+            ).textContent =
+            "00:00:00";
             return;
         }
-
-
         const hours =
         Math.floor(
             diff / 3600000
         );
-
-
         const minutes =
         Math.floor(
-            (diff % 3600000) / 60000
+            (diff % 3600000) /
+            60000
         );
-
-
         const seconds =
         Math.floor(
-            (diff % 60000) / 1000
+            (diff % 60000) /
+            1000
         );
-
-
-        document.getElementById("countdown")
-        .textContent =
-        String(hours).padStart(2, "0") +
-        ":" +
-        String(minutes).padStart(2, "0") +
-        ":" +
-        String(seconds).padStart(2, "0");
-
+        document.getElementById(
+            "countdown"
+        ).textContent =
+        String(hours)
+        .padStart(2, "0")
+        + ":" +
+        String(minutes)
+        .padStart(2, "0")
+        + ":" +
+        String(seconds)
+        .padStart(2, "0");
     }
-
-
     tick();
-
-
     clearInterval(
         window.countdownTimer
     );
-
-
     window.countdownTimer =
     setInterval(
         tick,
         1000
     );
-
 }
-
-
-/* ==========================================
-   CREATE DATE/TIME
-========================================== */
-
-function createDateTime(date, time) {
-
+/* =====================================================
+   CREATE DATE TIME
+===================================================== */
+function createDateTime(
+    date,
+    time
+) {
     if (!date || !time)
         return null;
-
     return new Date(
         `${date}T${time}:00`
     );
 }
-
-
-/* ==========================================
+/* =====================================================
    UPDATE ERROR
-========================================== */
-
-function showUpdateError(message) {
-
+===================================================== */
+function showUpdateError(
+    message
+) {
     const error =
-    document.getElementById("updateError");
-
+    document.getElementById(
+        "updateError"
+    );
     error.textContent =
     message;
-
     error.style.display =
     "block";
 }
-
 </script>
-
 </body>
 </html>
