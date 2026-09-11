@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,17 +47,12 @@ button,
 input,
 select,
 textarea{
-
     font:inherit;
-
 }
 
 button{
-
     cursor:pointer;
-
     -webkit-tap-highlight-color:transparent;
-
 }
 
 
@@ -723,9 +719,7 @@ button{
 @keyframes bigLoaderSpin{
 
     to{
-
         transform:rotate(360deg);
-
     }
 
 }
@@ -833,6 +827,135 @@ button{
 .candidate-updating-screen small{
 
     margin-top:20px;
+
+    color:#777777;
+
+    font-size:11px;
+
+}
+
+
+/* =====================================================
+   WEBSITE CLOSED SCREEN
+===================================================== */
+
+.website-closed-screen{
+
+    display:none;
+
+    min-height:70vh;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    background:#ffffff;
+
+    border:2px solid #000000;
+
+    border-radius:18px;
+
+    margin:20px auto;
+
+}
+
+.website-closed-screen.active{
+
+    display:flex;
+
+}
+
+.closed-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:#000000;
+
+    color:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+}
+
+.closed-badge{
+
+    margin-top:20px;
+
+    background:#ff0000;
+
+    color:#ffffff;
+
+    padding:7px 14px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+}
+
+.website-closed-screen h2{
+
+    margin-top:18px;
+
+    font-size:25px;
+
+    font-weight:900;
+
+}
+
+.website-closed-screen p{
+
+    max-width:520px;
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    color:#444444;
+
+}
+
+.closed-security{
+
+    margin-top:18px;
+
+    padding:12px 15px;
+
+    background:#f3f3f3;
+
+    border:2px solid #000000;
+
+    border-radius:10px;
+
+    font-size:12px;
+
+    font-weight:900;
+
+}
+
+.closed-note{
+
+    margin-top:16px;
 
     color:#777777;
 
@@ -953,6 +1076,125 @@ textarea{
     min-height:105px;
 
     resize:vertical;
+
+}
+
+
+/* =====================================================
+   WEBSITE SECURITY CONTROL
+===================================================== */
+
+.website-control{
+
+    background:#f5f5f5;
+
+    border:2px solid #000000;
+
+    border-radius:13px;
+
+    padding:15px;
+
+    margin-bottom:16px;
+
+}
+
+.website-control-title{
+
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:8px;
+
+}
+
+.website-control-text{
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    color:#444444;
+
+    margin-bottom:12px;
+
+}
+
+.website-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:10px;
+
+    font-size:12px;
+
+    font-weight:900;
+
+}
+
+.website-status-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#008f39;
+
+}
+
+.website-status-dot.closed{
+
+    background:#ff0000;
+
+}
+
+.close-website-button{
+
+    width:100%;
+
+    border:2px solid #ff0000;
+
+    background:#ffffff;
+
+    color:#ff0000;
+
+    border-radius:10px;
+
+    padding:13px;
+
+    font-size:13px;
+
+    font-weight:900;
+
+}
+
+.close-website-button:hover{
+
+    background:#ff0000;
+
+    color:#ffffff;
+
+}
+
+.close-website-button.open-mode{
+
+    border-color:#008f39;
+
+    color:#008f39;
+
+}
+
+.close-website-button.open-mode:hover{
+
+    background:#008f39;
+
+    color:#ffffff;
 
 }
 
@@ -1308,9 +1550,7 @@ textarea{
 @keyframes miniSpin{
 
     to{
-
         transform:rotate(360deg);
-
     }
 
 }
@@ -1535,7 +1775,8 @@ textarea{
 
     }
 
-    .candidate-updating-screen{
+    .candidate-updating-screen,
+    .website-closed-screen{
 
         min-height:70vh;
 
@@ -1545,13 +1786,15 @@ textarea{
 
     }
 
-    .candidate-updating-screen h2{
+    .candidate-updating-screen h2,
+    .website-closed-screen h2{
 
         font-size:20px;
 
     }
 
-    .candidate-updating-screen p{
+    .candidate-updating-screen p,
+    .website-closed-screen p{
 
         font-size:13px;
 
@@ -1655,6 +1898,46 @@ onclick="showAdmin()">
 <main
 id="candidatePage"
 class="container">
+
+
+<!-- =====================================================
+     WEBSITE CLOSED SCREEN
+===================================================== -->
+
+<section
+id="websiteClosedScreen"
+class="website-closed-screen">
+
+<div class="closed-icon">
+🔒
+</div>
+
+<div class="closed-badge">
+● SECURITY MODE ACTIVE
+</div>
+
+<h2>
+WEB APPLICATION CLOSED
+</h2>
+
+<p>
+For security reasons, this web application is temporarily closed.
+</p>
+
+<div class="closed-security">
+
+The application will open
+<strong>30 minutes before the rally reporting time.</strong>
+
+</div>
+
+<p class="closed-note">
+
+Please check again before your allotted reporting time.
+
+</p>
+
+</section>
 
 
 <!-- =====================================================
@@ -2245,6 +2528,54 @@ class="error">
 
 
 <!-- =====================================================
+     WEBSITE SECURITY CONTROL
+===================================================== -->
+
+<div class="website-control">
+
+<div class="website-control-title">
+
+🔐 WEBSITE SECURITY CONTROL
+
+</div>
+
+<div class="website-control-text">
+
+Close the candidate website when rally information
+should not be publicly displayed. The candidate page
+will show a security message until the website is opened again.
+
+</div>
+
+<div class="website-status">
+
+<span
+id="websiteStatusDot"
+class="website-status-dot">
+</span>
+
+<span
+id="websiteStatusText">
+
+WEBSITE OPEN
+
+</span>
+
+</div>
+
+<button
+id="closeWebsiteButton"
+class="close-website-button"
+onclick="toggleWebsiteClosed()">
+
+🔒 CLOSE WEBSITE
+
+</button>
+
+</div>
+
+
+<!-- =====================================================
      QUICK BATCH CONTROL
 ===================================================== -->
 
@@ -2618,9 +2949,7 @@ IMPORTANT NOTICE
 
 <textarea
 id="adminNotice"
-placeholder="Example: Batch 03 candidates report at Gate 2 immediately.">
-
-</textarea>
+placeholder="Example: Batch 03 candidates report at Gate 2 immediately."></textarea>
 
 </div>
 
@@ -2629,7 +2958,7 @@ placeholder="Example: Batch 03 candidates report at Gate 2 immediately.">
 
 
 <!-- =====================================================
-     UPDATE CANDIDATE PAGE BUTTON
+     UPDATE CANDIDATE PAGE
 ===================================================== -->
 
 <button
@@ -2718,33 +3047,27 @@ Rally Live Information System
 ===================================================== */
 
 import {
-
     initializeApp
-
 }
 from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
 
 import {
-
     getAuth,
     signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut
-
 }
 from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 
 import {
-
     getFirestore,
     doc,
     setDoc,
     onSnapshot
-
 }
 from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
@@ -2904,11 +3227,9 @@ async function(){
     try{
 
         await signInWithEmailAndPassword(
-
             auth,
             email,
             password
-
         );
 
     }
@@ -3009,10 +3330,8 @@ async function(){
 
 window.selectStatus =
 function(
-
     status,
     button
-
 ){
 
     selectedStatus =
@@ -3060,13 +3379,11 @@ function(batch){
 
 window.quickTimeline =
 function(
-
     open,
     ready,
     start,
     end,
     close
-
 ){
 
     document.getElementById(
@@ -3099,6 +3416,181 @@ function(
     close;
 
 };
+
+
+/* =====================================================
+   WEBSITE CLOSE / OPEN
+===================================================== */
+
+window.toggleWebsiteClosed =
+async function(){
+
+    const user =
+    auth.currentUser;
+
+
+    if(
+        !user ||
+        user.uid !== ADMIN_UID
+    ){
+
+        showUpdateError(
+            "You are not authorized to control the website."
+        );
+
+        return;
+
+    }
+
+
+    const button =
+    document.getElementById(
+        "closeWebsiteButton"
+    );
+
+
+    const currentClosed =
+    button.dataset.closed === "true";
+
+
+    try{
+
+        await setDoc(
+
+            rallyRef,
+
+            {
+
+                websiteClosed:
+                !currentClosed,
+
+                updatedAt:
+                new Date().toISOString()
+
+            },
+
+            {
+                merge:true
+            }
+
+        );
+
+
+        const success =
+        document.getElementById(
+            "updateSuccess"
+        );
+
+
+        if(!currentClosed){
+
+            success.textContent =
+            "✓ Candidate website has been closed for security.";
+
+        }
+
+        else{
+
+            success.textContent =
+            "✓ Candidate website has been opened.";
+
+        }
+
+
+        success.style.display =
+        "block";
+
+
+        setTimeout(()=>{
+
+            success.style.display =
+            "none";
+
+        },4000);
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        showUpdateError(
+            "Could not change website status: " +
+            error.message
+        );
+
+    }
+
+};
+
+
+/* =====================================================
+   UPDATE ADMIN WEBSITE STATUS UI
+===================================================== */
+
+function updateAdminWebsiteStatus(closed){
+
+    const button =
+    document.getElementById(
+        "closeWebsiteButton"
+    );
+
+
+    const statusText =
+    document.getElementById(
+        "websiteStatusText"
+    );
+
+
+    const statusDot =
+    document.getElementById(
+        "websiteStatusDot"
+    );
+
+
+    if(closed){
+
+        button.dataset.closed =
+        "true";
+
+        button.textContent =
+        "🔓 OPEN WEBSITE";
+
+        button.classList.add(
+            "open-mode"
+        );
+
+        statusText.textContent =
+        "WEBSITE CLOSED";
+
+        statusDot.classList.add(
+            "closed"
+        );
+
+    }
+
+    else{
+
+        button.dataset.closed =
+        "false";
+
+        button.textContent =
+        "🔒 CLOSE WEBSITE";
+
+        button.classList.remove(
+            "open-mode"
+        );
+
+        statusText.textContent =
+        "WEBSITE OPEN";
+
+        statusDot.classList.remove(
+            "closed"
+        );
+
+    }
+
+}
 
 
 /* =====================================================
@@ -3142,9 +3634,7 @@ async function(){
             },
 
             {
-
                 merge:true
-
             }
 
         );
@@ -3294,8 +3784,6 @@ async function(){
         ).value.trim(),
 
 
-        /* IMPORTANT */
-
         updating:false,
 
 
@@ -3311,7 +3799,11 @@ async function(){
 
             rallyRef,
 
-            data
+            data,
+
+            {
+                merge:true
+            }
 
         );
 
@@ -3475,6 +3967,11 @@ function loadAdminData(){
 
             });
 
+
+            updateAdminWebsiteStatus(
+                d.websiteClosed === true
+            );
+
         }
 
     );
@@ -3499,6 +3996,24 @@ onSnapshot(
         const d =
         snapshot.data();
 
+
+        /*
+         * WEBSITE CLOSED HAS PRIORITY.
+         */
+
+        if(d.websiteClosed === true){
+
+            showWebsiteClosed();
+
+            return;
+
+        }
+
+
+        /*
+         * WEBSITE OPEN
+         * NOW CHECK UPDATE SCREEN.
+         */
 
         if(d.updating === true){
 
@@ -3530,6 +4045,34 @@ onSnapshot(
 
 
 /* =====================================================
+   SHOW WEBSITE CLOSED
+===================================================== */
+
+function showWebsiteClosed(){
+
+    document.getElementById(
+        "candidateNormalContent"
+    ).style.display =
+    "none";
+
+
+    document.getElementById(
+        "candidateUpdatingScreen"
+    ).classList.remove(
+        "active"
+    );
+
+
+    document.getElementById(
+        "websiteClosedScreen"
+    ).classList.add(
+        "active"
+    );
+
+}
+
+
+/* =====================================================
    SHOW CANDIDATE UPDATE SCREEN
 ===================================================== */
 
@@ -3539,6 +4082,13 @@ function showCandidateUpdating(){
         "candidateNormalContent"
     ).style.display =
     "none";
+
+
+    document.getElementById(
+        "websiteClosedScreen"
+    ).classList.remove(
+        "active"
+    );
 
 
     document.getElementById(
@@ -3558,6 +4108,13 @@ function showCandidateData(){
 
     document.getElementById(
         "candidateUpdatingScreen"
+    ).classList.remove(
+        "active"
+    );
+
+
+    document.getElementById(
+        "websiteClosedScreen"
     ).classList.remove(
         "active"
     );
@@ -4042,10 +4599,8 @@ function updateCountdown(d){
 ===================================================== */
 
 function createDateTime(
-
     date,
     time
-
 ){
 
     if(!date || !time)
@@ -4088,10 +4643,10 @@ function showUpdateError(message){
 
 }
 
-
 </script>
 
 
 </body>
 
 </html>
+```
