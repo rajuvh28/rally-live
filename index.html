@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Army Recruitment Rally – Vijayapura – Mangalore ARO</title>
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Army Recruitment Rally – Vijayapura – Mangalore ARO
+</title>
 
 <style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -17,769 +29,1311 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#fff;
-    color:#000;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:#ffffff;
+    color:#000000;
+
     min-height:100vh;
+
 }
 
-button,input,select,textarea{
+button,
+input,
+select,
+textarea{
+
     font:inherit;
+
 }
 
 button{
+
     cursor:pointer;
+
     -webkit-tap-highlight-color:transparent;
+
 }
+
 
 /* =====================================================
    HEADER
 ===================================================== */
 
 .header{
-    background:#000;
-    color:#fff;
+
+    background:#000000;
+
+    color:#ffffff;
+
     padding:14px 16px;
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
-    border-bottom:3px solid #1769aa;
+
+    border-bottom:
+        3px solid #1769aa;
+
 }
 
 .header-inner{
+
     max-width:1100px;
+
     margin:auto;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:12px;
+
 }
 
 .logo{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     min-width:0;
+
 }
 
 .logo-icon{
+
     width:43px;
     height:43px;
+
     flex-shrink:0;
-    background:#fff;
-    color:#000;
+
+    background:#ffffff;
+
+    color:#000000;
+
     border-radius:10px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     font-size:22px;
+
 }
 
 .logo h1{
+
     font-size:17px;
+
     font-weight:900;
+
 }
 
 .logo p{
+
     font-size:10px;
+
     margin-top:3px;
+
     opacity:.8;
+
 }
 
 .admin-button{
-    border:2px solid #fff;
-    background:#fff;
-    color:#000;
+
+    border:2px solid #ffffff;
+
+    background:#ffffff;
+
+    color:#000000;
+
     border-radius:9px;
+
     padding:9px 12px;
+
     font-size:12px;
+
     font-weight:900;
+
     white-space:nowrap;
+
 }
 
 .admin-button:active{
+
     background:#1769aa;
-    color:#fff;
+
+    color:#ffffff;
+
 }
 
+
 /* =====================================================
-   CONTAINER
+   MAIN
 ===================================================== */
 
 .container{
+
     width:100%;
+
     max-width:1100px;
+
     margin:auto;
+
     padding:18px 14px 45px;
+
 }
+
 
 /* =====================================================
    HERO
 ===================================================== */
 
 .hero{
-    background:#fff;
-    border:2px solid #000;
+
+    background:#ffffff;
+
+    border:2px solid #000000;
+
     border-radius:16px;
+
     padding:20px;
+
     margin-bottom:15px;
+
 }
 
 .hero h2{
+
     font-size:23px;
+
     font-weight:900;
+
     margin-bottom:7px;
+
 }
 
 .hero p{
+
+    color:#000000;
+
     font-size:13px;
+
     line-height:1.5;
+
 }
+
 
 /* =====================================================
    STATUS
 ===================================================== */
 
 .status-card{
+
     border-radius:16px;
+
     padding:20px;
+
     margin-bottom:15px;
-    color:#fff;
-    background:#000;
-    border:2px solid #000;
+
+    color:#ffffff;
+
+    background:#000000;
+
+    border:2px solid #000000;
+
 }
 
 .status-card.open{
+
     background:#008f39;
+
 }
 
 .status-card.ready{
+
     background:#1769aa;
+
 }
 
 .status-card.running{
+
     background:#1769aa;
+
 }
 
 .status-card.closed{
-    background:#000;
+
+    background:#000000;
+
 }
 
 .status-card.waiting{
-    background:#000;
+
+    background:#000000;
+
 }
 
 .status-top{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:10px;
+
 }
 
 .status-title{
+
     font-size:12px;
+
     font-weight:800;
+
     opacity:.9;
+
 }
 
 .status-value{
+
     font-size:30px;
+
     font-weight:900;
+
     margin-top:4px;
+
 }
 
+
 /* =====================================================
-   LIVE
+   LIVE DOT
 ===================================================== */
 
 .live-dot{
+
     display:flex;
+
     align-items:center;
+
     gap:7px;
+
     font-size:12px;
+
     font-weight:900;
-    background:rgba(0,0,0,.3);
+
+    background:
+        rgba(0,0,0,.3);
+
     padding:7px 10px;
+
     border-radius:20px;
+
 }
 
 .dot{
+
     width:11px;
+
     height:11px;
+
     border-radius:50%;
-    background:red;
-    animation:liveBlink 1s infinite;
+
+    background:#ff0000;
+
+    animation:
+        liveBlink 1s infinite;
+
 }
 
 @keyframes liveBlink{
 
     0%{
+
         opacity:1;
+
         transform:scale(1);
-        box-shadow:0 0 0 0 rgba(255,0,0,.8);
+
+        box-shadow:
+            0 0 0 0
+            rgba(255,0,0,.8);
+
     }
 
     50%{
+
         opacity:.25;
+
         transform:scale(.7);
-        box-shadow:0 0 0 7px rgba(255,0,0,0);
+
+        box-shadow:
+            0 0 0 7px
+            rgba(255,0,0,0);
+
     }
 
     100%{
+
         opacity:1;
+
         transform:scale(1);
-        box-shadow:0 0 0 0 rgba(255,0,0,0);
+
+        box-shadow:
+            0 0 0 0
+            rgba(255,0,0,0);
+
     }
+
 }
+
 
 /* =====================================================
-   UPDATE INDICATOR
+   UPDATED TIME
 ===================================================== */
 
-.update-status{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    background:#f5f7fa;
-    border:1px solid #d8dce2;
-    border-radius:12px;
-    padding:10px 13px;
-    margin-bottom:15px;
-    font-size:11px;
-    font-weight:800;
+.updated-time{
+
+    margin-top:9px;
+
+    font-size:10px;
+
+    opacity:.8;
+
 }
 
-.update-left{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.update-loader{
-    width:15px;
-    height:15px;
-    border:2px solid #c9cdd2;
-    border-top-color:#1769aa;
-    border-radius:50%;
-    animation:spin .8s linear infinite;
-    display:none;
-}
-
-.update-status.updating .update-loader{
-    display:block;
-}
-
-.update-status.updating{
-    color:#1769aa;
-    border-color:#1769aa;
-    background:#eef7ff;
-}
-
-.update-status.updated{
-    color:#008f39;
-    border-color:#008f39;
-    background:#effbf4;
-}
-
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
-}
 
 /* =====================================================
    GRID
 ===================================================== */
 
 .grid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:12px;
+
     margin-bottom:15px;
+
 }
 
 .card{
-    background:#fff;
-    border:2px solid #000;
+
+    background:#ffffff;
+
+    border:2px solid #000000;
+
     border-radius:15px;
+
     padding:17px;
+
     min-width:0;
+
 }
 
 .card-label{
-    color:#000;
+
+    color:#000000;
+
     font-size:11px;
+
     font-weight:900;
+
     margin-bottom:6px;
+
     text-transform:uppercase;
+
 }
 
 .card-value{
+
     font-size:21px;
+
     font-weight:900;
+
     word-break:break-word;
+
 }
+
 
 /* =====================================================
    COUNTDOWN
 ===================================================== */
 
 .countdown-card{
-    background:#000;
-    color:#fff;
+
+    background:#000000;
+
+    color:#ffffff;
+
     border-radius:16px;
+
     padding:22px 15px;
+
     text-align:center;
+
     margin-bottom:15px;
+
 }
 
 .countdown-label{
+
     font-size:13px;
+
     font-weight:700;
+
 }
 
 .countdown{
-    color:#fff;
+
+    color:#ffffff;
+
     font-size:39px;
+
     font-weight:900;
+
     margin-top:7px;
+
     letter-spacing:2px;
-    font-variant-numeric:tabular-nums;
+
+    font-variant-numeric:
+        tabular-nums;
+
 }
+
 
 /* =====================================================
    NOTICE
 ===================================================== */
 
 .notice{
-    background:#fff;
-    border:2px solid red;
-    border-left:7px solid red;
+
+    background:#ffffff;
+
+    border:2px solid #ff0000;
+
+    border-left:7px solid #ff0000;
+
     border-radius:14px;
+
     padding:17px;
+
     margin-bottom:15px;
+
 }
 
 .notice-title{
-    color:red;
+
+    color:#ff0000;
+
     font-weight:900;
+
     margin-bottom:7px;
+
 }
 
 .notice-text{
-    color:#000;
+
+    color:#000000;
+
     line-height:1.55;
+
     font-size:14px;
+
 }
+
 
 /* =====================================================
    TIMELINE
 ===================================================== */
 
 .timeline{
-    background:#fff;
-    border:2px solid #000;
+
+    background:#ffffff;
+
+    border:2px solid #000000;
+
     border-radius:16px;
+
     padding:20px;
+
 }
 
 .timeline h3{
+
     font-size:18px;
+
     margin-bottom:20px;
+
 }
 
 .timeline-item{
+
     display:flex;
+
     gap:12px;
+
     padding-bottom:19px;
+
     position:relative;
+
 }
 
 .timeline-item:last-child{
+
     padding-bottom:0;
+
 }
 
 .timeline-item:not(:last-child)::after{
+
     content:"";
+
     position:absolute;
+
     left:18px;
+
     top:38px;
+
     bottom:0;
+
     width:2px;
-    background:#000;
+
+    background:#000000;
+
 }
 
 .timeline-icon{
+
     width:37px;
+
     height:37px;
+
     min-width:37px;
+
     border-radius:50%;
+
     background:#1769aa;
-    color:#fff;
+
+    color:#ffffff;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
     font-weight:900;
+
     position:relative;
+
     z-index:2;
+
 }
 
 .timeline-content strong{
+
     display:block;
+
     margin-bottom:4px;
+
     font-size:14px;
+
 }
 
 .timeline-content span{
-    color:#000;
+
+    color:#000000;
+
     font-size:13px;
+
 }
+
+
+/* =====================================================
+   CANDIDATE UPDATE SCREEN
+===================================================== */
+
+.candidate-updating-screen{
+
+    display:none;
+
+    min-height:70vh;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    background:#ffffff;
+
+    border:2px solid #000000;
+
+    border-radius:18px;
+
+    margin:20px auto;
+
+}
+
+.candidate-updating-screen.active{
+
+    display:flex;
+
+}
+
+.big-update-loader{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    border:5px solid #e5e5e5;
+
+    border-top-color:#1769aa;
+
+    animation:
+        bigLoaderSpin
+        .8s linear infinite;
+
+}
+
+@keyframes bigLoaderSpin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+.updating-badge{
+
+    margin-top:22px;
+
+    background:#000000;
+
+    color:#ffffff;
+
+    padding:7px 13px;
+
+    border-radius:20px;
+
+    font-size:10px;
+
+    font-weight:900;
+
+}
+
+.candidate-updating-screen h2{
+
+    margin-top:20px;
+
+    font-size:24px;
+
+    font-weight:900;
+
+}
+
+.candidate-updating-screen p{
+
+    max-width:500px;
+
+    margin-top:10px;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    color:#444444;
+
+}
+
+.updating-dots{
+
+    display:flex;
+
+    gap:6px;
+
+    margin-top:18px;
+
+}
+
+.updating-dots span{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#1769aa;
+
+    animation:
+        updateDot
+        1.2s infinite;
+
+}
+
+.updating-dots span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.updating-dots span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes updateDot{
+
+    0%,80%,100%{
+
+        opacity:.25;
+
+        transform:scale(.7);
+
+    }
+
+    40%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+.candidate-updating-screen small{
+
+    margin-top:20px;
+
+    color:#777777;
+
+    font-size:11px;
+
+}
+
 
 /* =====================================================
    ADMIN
 ===================================================== */
 
 #adminPage{
+
     display:none;
+
 }
 
 .admin-box{
-    background:#fff;
-    border:2px solid #000;
+
+    background:#ffffff;
+
+    border:2px solid #000000;
+
     border-radius:16px;
+
     padding:20px;
+
     margin-bottom:15px;
+
 }
 
 .admin-box h2{
+
     font-size:21px;
+
     margin-bottom:7px;
+
 }
 
 .admin-box p{
-    color:#000;
+
+    color:#000000;
+
     font-size:13px;
+
     line-height:1.5;
+
     margin-bottom:20px;
+
 }
-
-/* =====================================================
-   QUICK ADMIN PANEL
-===================================================== */
-
-.quick-panel{
-    background:#f6f8fa;
-    border:2px solid #d8dce2;
-    border-radius:15px;
-    padding:16px;
-    margin-bottom:18px;
-}
-
-.quick-panel h3{
-    font-size:16px;
-    margin-bottom:5px;
-}
-
-.quick-description{
-    font-size:12px;
-    color:#555;
-    margin-bottom:15px;
-}
-
-.quick-title{
-    font-size:11px;
-    font-weight:900;
-    text-transform:uppercase;
-    margin:15px 0 8px;
-}
-
-.quick-buttons{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:8px;
-}
-
-.quick-btn{
-    background:#fff;
-    color:#000;
-    border:2px solid #000;
-    border-radius:9px;
-    padding:11px 6px;
-    font-size:12px;
-    font-weight:900;
-}
-
-.quick-btn:hover{
-    border-color:#1769aa;
-    color:#1769aa;
-}
-
-.quick-btn.selected{
-    background:#1769aa;
-    border-color:#1769aa;
-    color:#fff;
-}
-
-.time-buttons{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-}
-
-.time-btn{
-    background:#fff;
-    border:2px solid #000;
-    border-radius:9px;
-    padding:12px 6px;
-    font-weight:900;
-    font-size:12px;
-}
-
-.time-btn.selected{
-    background:#1769aa;
-    color:#fff;
-    border-color:#1769aa;
-}
-
-.action-buttons{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:8px;
-}
-
-.action-btn{
-    border:2px solid #000;
-    background:#fff;
-    border-radius:9px;
-    padding:11px;
-    font-weight:900;
-    font-size:12px;
-}
-
-.action-btn:hover{
-    background:#000;
-    color:#fff;
-}
-
-.quick-notices{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:8px;
-}
-
-.notice-btn{
-    background:#fff;
-    border:2px solid #1769aa;
-    color:#1769aa;
-    border-radius:9px;
-    padding:11px 8px;
-    font-weight:900;
-    font-size:11px;
-}
-
-/* =====================================================
-   STANDARD PRESET
-===================================================== */
-
-.preset-box{
-    background:#000;
-    color:#fff;
-    border-radius:13px;
-    padding:14px;
-    margin-top:15px;
-}
-
-.preset-box strong{
-    display:block;
-    margin-bottom:5px;
-    font-size:13px;
-}
-
-.preset-box span{
-    font-size:11px;
-    opacity:.8;
-}
-
-.preset-button{
-    width:100%;
-    margin-top:11px;
-    background:#fff;
-    color:#000;
-    border:0;
-    border-radius:9px;
-    padding:12px;
-    font-weight:900;
-}
-
-/* =====================================================
-   FORM
-===================================================== */
 
 .form-grid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:14px;
+
 }
 
 .form-group{
+
     display:flex;
+
     flex-direction:column;
+
     gap:7px;
+
 }
 
 .form-group.full{
-    grid-column:1/-1;
+
+    grid-column:1 / -1;
+
 }
 
 .form-group label{
+
     font-weight:900;
+
     font-size:12px;
+
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
+
     width:100%;
-    border:2px solid #000;
+
+    border:2px solid #000000;
+
     border-radius:10px;
+
     padding:12px;
+
     outline:none;
-    background:#fff;
-    color:#000;
+
+    background:#ffffff;
+
+    color:#000000;
+
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{
+
     border-color:#1769aa;
+
 }
 
 textarea{
+
     min-height:105px;
+
     resize:vertical;
+
 }
+
+
+/* =====================================================
+   QUICK CONTROLS
+===================================================== */
+
+.quick-box{
+
+    background:#f5f5f5;
+
+    border:2px solid #000000;
+
+    border-radius:13px;
+
+    padding:15px;
+
+    margin-bottom:16px;
+
+}
+
+.quick-title{
+
+    font-size:12px;
+
+    font-weight:900;
+
+    margin-bottom:10px;
+
+}
+
+.quick-buttons{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:8px;
+
+}
+
+.quick-btn{
+
+    border:2px solid #000000;
+
+    background:#ffffff;
+
+    color:#000000;
+
+    border-radius:9px;
+
+    padding:10px 5px;
+
+    font-size:11px;
+
+    font-weight:900;
+
+}
+
+.quick-btn:hover{
+
+    background:#1769aa;
+
+    color:#ffffff;
+
+    border-color:#1769aa;
+
+}
+
 
 /* =====================================================
    STATUS BUTTONS
 ===================================================== */
 
 .status-buttons{
+
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:8px;
+
 }
 
 .status-btn{
-    border:2px solid #000;
-    background:#fff;
-    color:#000;
+
+    border:2px solid #000000;
+
+    background:#ffffff;
+
+    color:#000000;
+
     border-radius:9px;
+
     padding:11px 5px;
+
     font-weight:900;
+
     font-size:12px;
+
 }
 
 .status-btn.selected{
+
     background:#1769aa;
-    color:#fff;
+
+    color:#ffffff;
+
     border-color:#1769aa;
+
 }
 
 .status-btn[data-status="OPEN"].selected{
+
     background:#008f39;
+
     border-color:#008f39;
+
 }
 
 .status-btn[data-status="CLOSED"].selected{
-    background:#000;
-    border-color:#000;
+
+    background:#000000;
+
+    border-color:#000000;
+
 }
+
+
+/* =====================================================
+   UPDATE BUTTON
+===================================================== */
+
+.updating-button{
+
+    margin-top:18px;
+
+    width:100%;
+
+    background:#000000;
+
+    color:#ffffff;
+
+    border:2px solid #000000;
+
+    border-radius:11px;
+
+    padding:14px;
+
+    font-weight:900;
+
+    font-size:14px;
+
+}
+
+.updating-button:hover{
+
+    background:#1769aa;
+
+    border-color:#1769aa;
+
+}
+
+.updating-button:active{
+
+    transform:scale(.98);
+
+}
+
 
 /* =====================================================
    PUBLISH
 ===================================================== */
 
 .publish{
-    margin-top:18px;
+
+    margin-top:10px;
+
     width:100%;
+
     background:#1769aa;
-    color:#fff;
+
+    color:#ffffff;
+
     border:2px solid #1769aa;
+
     border-radius:11px;
+
     padding:14px;
+
     font-weight:900;
+
     font-size:15px;
+
 }
 
 .publish:active{
-    background:#000;
-    border-color:#000;
+
+    background:#000000;
+
+    border-color:#000000;
+
 }
 
 .logout{
+
     margin-top:9px;
+
     width:100%;
-    background:#fff;
-    color:red;
-    border:2px solid red;
+
+    background:#ffffff;
+
+    color:#ff0000;
+
+    border:2px solid #ff0000;
+
     border-radius:11px;
+
     padding:12px;
+
     font-weight:900;
+
 }
+
 
 /* =====================================================
    LOGIN
 ===================================================== */
 
 .login-box{
+
     max-width:450px;
+
     margin:25px auto;
+
 }
 
 .login-box input{
+
     margin-bottom:5px;
+
 }
+
 
 /* =====================================================
    MESSAGES
 ===================================================== */
 
 .error{
-    background:#fff;
-    color:red;
-    border:2px solid red;
+
+    background:#ffffff;
+
+    color:#ff0000;
+
+    border:2px solid #ff0000;
+
     padding:11px;
+
     border-radius:9px;
+
     margin-bottom:14px;
+
     display:none;
+
     font-size:13px;
+
     font-weight:700;
+
 }
 
 .success{
-    background:#fff;
+
+    background:#ffffff;
+
     color:#008f39;
+
     border:2px solid #008f39;
+
     padding:11px;
+
     border-radius:9px;
+
     margin-bottom:14px;
+
     display:none;
+
     font-size:13px;
+
     font-weight:700;
+
 }
+
+
+/* =====================================================
+   PUBLISHING INDICATOR
+===================================================== */
+
+.publish-status{
+
+    display:none;
+
+    margin-top:12px;
+
+    padding:11px;
+
+    border-radius:9px;
+
+    background:#f1f1f1;
+
+    border:2px solid #1769aa;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    text-align:center;
+
+}
+
+.publish-status.show{
+
+    display:block;
+
+}
+
+.mini-loader{
+
+    display:inline-block;
+
+    width:12px;
+
+    height:12px;
+
+    border:2px solid #bbbbbb;
+
+    border-top-color:#1769aa;
+
+    border-radius:50%;
+
+    animation:
+        miniSpin
+        .7s linear infinite;
+
+    vertical-align:-2px;
+
+    margin-right:5px;
+
+}
+
+@keyframes miniSpin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
 
 /* =====================================================
    FOOTER
 ===================================================== */
 
 .footer{
+
     text-align:center;
-    color:#000;
+
+    color:#000000;
+
     font-size:11px;
+
     padding:25px 15px;
-    border-top:2px solid #000;
+
+    border-top:2px solid #000000;
+
 }
+
 
 /* =====================================================
    MOBILE
@@ -788,140 +1342,223 @@ textarea{
 @media(max-width:700px){
 
     .header{
+
         padding:11px 12px;
+
     }
 
     .logo-icon{
+
         width:39px;
+
         height:39px;
+
         font-size:20px;
+
     }
 
     .logo h1{
+
         font-size:14px;
+
     }
 
     .logo p{
+
         font-size:8px;
+
     }
 
     .admin-button{
+
         padding:8px 10px;
+
         font-size:10px;
+
     }
 
     .container{
-        padding:14px 10px 35px;
+
+        padding:
+            14px 10px 35px;
+
     }
 
     .hero{
+
         padding:17px;
+
         border-radius:14px;
+
     }
 
     .hero h2{
+
         font-size:20px;
+
     }
 
     .hero p{
+
         font-size:12px;
+
     }
 
     .status-card{
+
         padding:17px;
+
         border-radius:14px;
+
     }
 
     .status-value{
+
         font-size:26px;
+
     }
 
     .live-dot{
+
         font-size:10px;
+
         padding:6px 8px;
+
     }
 
     .dot{
+
         width:9px;
+
         height:9px;
+
     }
 
     .grid{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
         gap:9px;
+
     }
 
     .card{
+
         padding:14px;
+
         border-radius:13px;
+
     }
 
     .card-label{
+
         font-size:9px;
+
     }
 
     .card-value{
+
         font-size:18px;
+
     }
 
     .countdown-card{
+
         padding:19px 10px;
+
     }
 
     .countdown{
+
         font-size:29px;
+
         letter-spacing:1px;
+
     }
 
     .notice{
+
         padding:14px;
+
     }
 
     .notice-text{
+
         font-size:13px;
+
     }
 
     .timeline{
+
         padding:16px;
+
     }
 
     .timeline h3{
+
         font-size:17px;
+
     }
 
     .form-grid{
+
         grid-template-columns:1fr;
+
     }
 
     .form-group.full{
+
         grid-column:auto;
+
     }
 
     .status-buttons{
-        grid-template-columns:1fr 1fr;
-    }
 
-    .admin-box{
-        padding:16px;
-        border-radius:14px;
+        grid-template-columns:
+            1fr 1fr;
+
     }
 
     .quick-buttons{
-        grid-template-columns:1fr 1fr;
+
+        grid-template-columns:
+            1fr 1fr;
+
     }
 
-    .time-buttons{
-        grid-template-columns:1fr 1fr;
+    .admin-box{
+
+        padding:16px;
+
+        border-radius:14px;
+
     }
 
-    .quick-notices{
-        grid-template-columns:1fr;
+    .candidate-updating-screen{
+
+        min-height:70vh;
+
+        margin:14px 10px;
+
+        padding:30px 18px;
+
     }
 
-    .action-buttons{
-        grid-template-columns:1fr;
+    .candidate-updating-screen h2{
+
+        font-size:20px;
+
     }
+
+    .candidate-updating-screen p{
+
+        font-size:13px;
+
+    }
+
 }
+
 
 /* =====================================================
    VERY SMALL PHONES
@@ -930,29 +1567,44 @@ textarea{
 @media(max-width:380px){
 
     .logo p{
+
         display:none;
+
     }
 
     .logo h1{
+
         font-size:13px;
+
     }
 
     .grid{
+
         grid-template-columns:1fr;
+
     }
 
     .countdown{
+
         font-size:26px;
+
     }
 
     .status-value{
+
         font-size:24px;
+
     }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      HEADER
@@ -969,16 +1621,26 @@ textarea{
 </div>
 
 <div>
-<h1>ARMY RECRUITMENT RALLY</h1>
-<p>VIJAYAPURA • MANGALORE ARO</p>
+
+<h1>
+ARMY RECRUITMENT RALLY
+</h1>
+
+<p>
+VIJAYAPURA • MANGALORE ARO
+</p>
+
 </div>
 
 </div>
+
 
 <button
 class="admin-button"
 onclick="showAdmin()">
+
 🔐 ADMIN
+
 </button>
 
 </div>
@@ -990,41 +1652,72 @@ onclick="showAdmin()">
      CANDIDATE PAGE
 ===================================================== -->
 
-<main id="candidatePage" class="container">
+<main
+id="candidatePage"
+class="container">
 
-<section class="hero">
 
-<h2>ARMY RECRUITMENT RALLY</h2>
+<!-- =====================================================
+     UPDATE SCREEN
+===================================================== -->
 
-<p>VIJAYAPURA • MANGALORE ARO</p>
+<section
+id="candidateUpdatingScreen"
+class="candidate-updating-screen">
 
-<p style="margin-top:6px;">
-Live rally status, batch information,
-timings and important notices.
+<div class="big-update-loader"></div>
+
+<div class="updating-badge">
+● LIVE SYSTEM UPDATE
+</div>
+
+<h2>
+UPDATING RALLY INFORMATION
+</h2>
+
+<p>
+Please wait while the latest Army Recruitment Rally
+information is being published.
 </p>
+
+<div class="updating-dots">
+
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<small>
+Do not refresh the page
+</small>
 
 </section>
 
 
-<!-- LIVE UPDATE STATUS -->
+<!-- =====================================================
+     NORMAL CANDIDATE CONTENT
+===================================================== -->
 
-<section
-id="updateStatus"
-class="update-status">
+<div id="candidateNormalContent">
 
-<div class="update-left">
 
-<div class="update-loader"></div>
+<section class="hero">
 
-<span id="updateMessage">
-LIVE INFORMATION READY
-</span>
+<h2>
+ARMY RECRUITMENT RALLY
+</h2>
 
-</div>
+<p>
+VIJAYAPURA • MANGALORE ARO
+</p>
 
-<span id="lastUpdated">
-Waiting for update
-</span>
+<p style="margin-top:6px;">
+
+Live rally status, batch information,
+timings and important notices.
+
+</p>
 
 </section>
 
@@ -1040,16 +1733,29 @@ class="status-card waiting">
 <div>
 
 <div class="status-title">
+
 ARMY RECRUITMENT RALLY • GROUND STATUS
+
 </div>
 
 <div
 id="groundStatus"
 class="status-value">
+
 WAITING
+
+</div>
+
+<div
+id="updatedTime"
+class="updated-time">
+
+Last updated: —
+
 </div>
 
 </div>
+
 
 <div class="live-dot">
 
@@ -1068,6 +1774,7 @@ LIVE
 
 <section class="grid">
 
+
 <div class="card">
 
 <div class="card-label">
@@ -1077,7 +1784,9 @@ CURRENT BATCH
 <div
 id="currentBatch"
 class="card-value">
+
 Waiting
+
 </div>
 
 </div>
@@ -1092,7 +1801,9 @@ TRADE
 <div
 id="trade"
 class="card-value">
+
 -
+
 </div>
 
 </div>
@@ -1107,7 +1818,9 @@ DISTRICT
 <div
 id="district"
 class="card-value">
+
 -
+
 </div>
 
 </div>
@@ -1122,10 +1835,13 @@ RALLY DATE
 <div
 id="rallyDate"
 class="card-value">
+
 -
+
 </div>
 
 </div>
+
 
 </section>
 
@@ -1157,6 +1873,7 @@ class="countdown">
 
 <section class="grid">
 
+
 <div class="card">
 
 <div class="card-label">
@@ -1166,7 +1883,9 @@ CANDIDATES GET READY
 <div
 id="readyTime"
 class="card-value">
+
 -
+
 </div>
 
 </div>
@@ -1181,7 +1900,9 @@ ROUND STARTS
 <div
 id="startTime"
 class="card-value">
+
 -
+
 </div>
 
 </div>
@@ -1196,7 +1917,9 @@ ROUND ENDS
 <div
 id="endTime"
 class="card-value">
+
 -
+
 </div>
 
 </div>
@@ -1211,10 +1934,13 @@ GROUND CLOSES
 <div
 id="closeTime"
 class="card-value">
+
 -
+
 </div>
 
 </div>
+
 
 </section>
 
@@ -1232,7 +1958,9 @@ NEXT BATCH
 <div
 id="nextBatch"
 class="card-value">
+
 -
+
 </div>
 
 </section>
@@ -1243,7 +1971,9 @@ class="card-value">
 <section class="notice">
 
 <div class="notice-title">
+
 📢 IMPORTANT ARMY RECRUITMENT RALLY NOTICE
+
 </div>
 
 <div
@@ -1262,7 +1992,9 @@ No new notice.
 <section class="timeline">
 
 <h3>
+
 ARMY RECRUITMENT RALLY • TODAY'S TIMELINE
+
 </h3>
 
 
@@ -1370,7 +2102,11 @@ Ground Closes
 
 </div>
 
+
 </section>
+
+
+</div>
 
 </main>
 
@@ -1379,18 +2115,24 @@ Ground Closes
      ADMIN PAGE
 ===================================================== -->
 
-<main id="adminPage" class="container">
+<main
+id="adminPage"
+class="container">
 
 
-<!-- LOGIN -->
+<!-- =====================================================
+     LOGIN
+===================================================== -->
 
 <section
 id="loginSection"
 class="admin-box login-box">
 
+
 <h2>
 🔐 ARMY RECRUITMENT RALLY ADMIN
 </h2>
+
 
 <p>
 
@@ -1407,6 +2149,7 @@ update rally information.
 <div
 id="loginError"
 class="error">
+
 </div>
 
 
@@ -1451,10 +2194,13 @@ LOGIN TO RALLY ADMIN PANEL
 
 </button>
 
+
 </section>
 
 
-<!-- ADMIN PANEL -->
+<!-- =====================================================
+     ADMIN PANEL
+===================================================== -->
 
 <section
 id="panelSection"
@@ -1463,9 +2209,11 @@ style="display:none">
 
 <div class="admin-box">
 
+
 <h2>
 ⚙️ ARMY RECRUITMENT RALLY CONTROL PANEL
 </h2>
+
 
 <p>
 
@@ -1473,10 +2221,8 @@ VIJAYAPURA • MANGALORE ARO
 
 <br>
 
-Fast controls for officers.
-Select the batch, time and current
-rally situation instead of typing
-everything manually.
+Use quick controls whenever possible.
+Only change the required information.
 
 </p>
 
@@ -1484,312 +2230,252 @@ everything manually.
 <div
 id="updateSuccess"
 class="success">
+
 Army Recruitment Rally update
 published successfully.
+
 </div>
 
 
 <div
 id="updateError"
 class="error">
-</div>
-
-
-<!-- =================================================
-     QUICK CONTROL PANEL
-================================================= -->
-
-<div class="quick-panel">
-
-<h3>
-⚡ QUICK RALLY CONTROL
-</h3>
-
-<div class="quick-description">
-
-Officer can update the rally using
-buttons. Manual typing is optional.
 
 </div>
 
 
-<!-- BATCH -->
+<!-- =====================================================
+     QUICK BATCH CONTROL
+===================================================== -->
+
+<div class="quick-box">
 
 <div class="quick-title">
-1. SELECT CURRENT BATCH
+
+⚡ QUICK BATCH
+
 </div>
+
 
 <div class="quick-buttons">
 
-<button
-class="quick-btn"
-onclick="selectBatch('Batch 01',this)">
-Batch 01
-</button>
 
 <button
 class="quick-btn"
-onclick="selectBatch('Batch 02',this)">
-Batch 02
+onclick="quickBatch('Batch 01')">
+
+BATCH 01
+
 </button>
+
 
 <button
 class="quick-btn"
-onclick="selectBatch('Batch 03',this)">
-Batch 03
+onclick="quickBatch('Batch 02')">
+
+BATCH 02
+
 </button>
+
 
 <button
 class="quick-btn"
-onclick="selectBatch('Batch 04',this)">
-Batch 04
+onclick="quickBatch('Batch 03')">
+
+BATCH 03
+
 </button>
+
 
 <button
 class="quick-btn"
-onclick="selectBatch('Batch 05',this)">
-Batch 05
+onclick="quickBatch('Batch 04')">
+
+BATCH 04
+
 </button>
+
 
 <button
 class="quick-btn"
-onclick="selectBatch('Batch 06',this)">
-Batch 06
+onclick="quickBatch('Batch 05')">
+
+BATCH 05
+
 </button>
+
 
 <button
 class="quick-btn"
-onclick="selectBatch('Batch 07',this)">
-Batch 07
+onclick="quickBatch('Batch 06')">
+
+BATCH 06
+
 </button>
+
 
 <button
 class="quick-btn"
-onclick="selectBatch('Batch 08',this)">
-Batch 08
+onclick="quickBatch('Batch 07')">
+
+BATCH 07
+
 </button>
+
+
+<button
+class="quick-btn"
+onclick="quickBatch('Batch 08')">
+
+BATCH 08
+
+</button>
+
+
+</div>
 
 </div>
 
 
-<!-- TIME SLOT -->
+<!-- =====================================================
+     QUICK TIMELINE
+===================================================== -->
+
+<div class="quick-box">
 
 <div class="quick-title">
-2. SELECT TIME SLOT
-</div>
 
-<div class="time-buttons">
-
-<button
-class="time-btn"
-onclick="selectTimeSlot('08:00','09:00',this)">
-8:00 – 9:00
-</button>
-
-<button
-class="time-btn"
-onclick="selectTimeSlot('09:00','10:00',this)">
-9:00 – 10:00
-</button>
-
-<button
-class="time-btn"
-onclick="selectTimeSlot('10:00','11:00',this)">
-10:00 – 11:00
-</button>
-
-<button
-class="time-btn"
-onclick="selectTimeSlot('11:00','12:00',this)">
-11:00 – 12:00
-</button>
-
-<button
-class="time-btn"
-onclick="selectTimeSlot('12:00','13:00',this)">
-12:00 – 1:00
-</button>
-
-<button
-class="time-btn"
-onclick="selectTimeSlot('14:00','15:00',this)">
-2:00 – 3:00
-</button>
+⏱️ QUICK TIMELINE
 
 </div>
 
 
-<!-- STATUS -->
+<div class="quick-buttons">
+
+
+<button
+class="quick-btn"
+onclick="quickTimeline('03:00','03:30','04:00','05:30','06:00')">
+
+03:00–06:00
+
+</button>
+
+
+<button
+class="quick-btn"
+onclick="quickTimeline('06:00','06:30','07:00','08:30','09:00')">
+
+06:00–09:00
+
+</button>
+
+
+<button
+class="quick-btn"
+onclick="quickTimeline('08:00','08:30','09:00','10:30','11:00')">
+
+08:00–11:00
+
+</button>
+
+
+<button
+class="quick-btn"
+onclick="quickTimeline('10:00','10:30','11:00','12:30','13:00')">
+
+10:00–13:00
+
+</button>
+
+
+<button
+class="quick-btn"
+onclick="quickTimeline('12:00','12:30','13:00','14:30','15:00')">
+
+12:00–15:00
+
+</button>
+
+
+<button
+class="quick-btn"
+onclick="quickTimeline('14:00','14:30','15:00','16:30','17:00')">
+
+14:00–17:00
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     QUICK STATUS
+===================================================== -->
+
+<div class="quick-box">
 
 <div class="quick-title">
-3. CURRENT RALLY SITUATION
+
+🚦 QUICK STATUS
+
 </div>
+
 
 <div class="status-buttons">
+
 
 <button
 class="status-btn"
 data-status="OPEN"
 onclick="selectStatus('OPEN',this)">
+
 🟢 OPEN
+
 </button>
+
 
 <button
 class="status-btn"
 data-status="READY"
 onclick="selectStatus('READY',this)">
+
 🔵 READY
+
 </button>
+
 
 <button
 class="status-btn"
 data-status="RUNNING"
 onclick="selectStatus('RUNNING',this)">
-🏃 RUNNING
+
+🔵 RUNNING
+
 </button>
+
 
 <button
 class="status-btn"
 data-status="CLOSED"
 onclick="selectStatus('CLOSED',this)">
+
 ⚫ CLOSED
-</button>
-
-</div>
-
-
-<!-- QUICK ACTIONS -->
-
-<div class="quick-title">
-4. QUICK ACTION
-</div>
-
-<div class="action-buttons">
-
-<button
-class="action-btn"
-onclick="quickAction('READY')">
-
-👥 CANDIDATES GET READY
 
 </button>
 
-<button
-class="action-btn"
-onclick="quickAction('RUNNING')">
-
-🏃 START ROUND
-
-</button>
-
-<button
-class="action-btn"
-onclick="quickAction('CLOSED')">
-
-✅ ROUND COMPLETED
-
-</button>
-
-<button
-class="action-btn"
-onclick="quickAction('CLOSED')">
-
-🚪 GROUND CLOSED
-
-</button>
-
-</div>
-
-
-<!-- QUICK NOTICES -->
-
-<div class="quick-title">
-5. QUICK NOTICE
-</div>
-
-<div class="quick-notices">
-
-<button
-class="notice-btn"
-onclick="setQuickNotice('Candidates report to the ground immediately.')">
-
-📢 Report Immediately
-
-</button>
-
-<button
-class="notice-btn"
-onclick="setQuickNotice('Candidates get ready for the physical test.')">
-
-👥 Get Ready
-
-</button>
-
-<button
-class="notice-btn"
-onclick="setQuickNotice('Physical test round is starting now.')">
-
-🏃 Round Starting
-
-</button>
-
-<button
-class="notice-btn"
-onclick="setQuickNotice('Next batch candidates report to the gate.')">
-
-➡️ Next Batch
-
-</button>
-
-<button
-class="notice-btn"
-onclick="setQuickNotice('Please wait for further instructions.')">
-
-⏳ Please Wait
-
-</button>
-
-<button
-class="notice-btn"
-onclick="setQuickNotice('Today’s rally activity has been completed.')">
-
-✅ Rally Completed
-
-</button>
-
-</div>
-
-
-<!-- STANDARD PRESET -->
-
-<div class="preset-box">
-
-<strong>
-⚡ STANDARD BATCH PRESET
-</strong>
-
-<span>
-Automatically prepares the standard
-rally timeline. Officer only needs to
-select batch and publish.
-</span>
-
-<button
-class="preset-button"
-onclick="prepareStandardBatch()">
-
-PREPARE STANDARD BATCH
-
-</button>
 
 </div>
 
 </div>
 
 
-<!-- =================================================
-     MANUAL / EDITABLE INFORMATION
-================================================= -->
+<!-- =====================================================
+     FORM
+===================================================== -->
 
 <div class="form-grid">
 
@@ -1815,7 +2501,6 @@ TRADE
 
 <input
 id="adminTrade"
-value="GD"
 placeholder="Example: GD">
 
 </div>
@@ -1829,7 +2514,6 @@ DISTRICT
 
 <input
 id="adminDistrict"
-value="Vijayapura"
 placeholder="Example: Vijayapura">
 
 </div>
@@ -1929,68 +2613,61 @@ id="adminClose">
 <div class="form-group full">
 
 <label>
-GROUND STATUS
-</label>
-
-<div class="status-buttons">
-
-<button
-class="status-btn"
-data-status="OPEN"
-onclick="selectStatus('OPEN',this)">
-🟢 OPEN
-</button>
-
-<button
-class="status-btn"
-data-status="READY"
-onclick="selectStatus('READY',this)">
-🔵 READY
-</button>
-
-<button
-class="status-btn"
-data-status="RUNNING"
-onclick="selectStatus('RUNNING',this)">
-🏃 RUNNING
-</button>
-
-<button
-class="status-btn"
-data-status="CLOSED"
-onclick="selectStatus('CLOSED',this)">
-⚫ CLOSED
-</button>
-
-</div>
-
-</div>
-
-
-<div class="form-group full">
-
-<label>
 IMPORTANT NOTICE
 </label>
 
 <textarea
 id="adminNotice"
 placeholder="Example: Batch 03 candidates report at Gate 2 immediately.">
+
 </textarea>
 
 </div>
 
+
 </div>
 
+
+<!-- =====================================================
+     UPDATE CANDIDATE PAGE BUTTON
+===================================================== -->
+
+<button
+class="updating-button"
+onclick="startRallyUpdating()">
+
+🔄 UPDATE CANDIDATE PAGE
+
+</button>
+
+
+<div
+id="publishStatus"
+class="publish-status">
+
+<span class="mini-loader"></span>
+
+Publishing latest rally information...
+
+</div>
+
+
+<!-- =====================================================
+     PUBLISH
+===================================================== -->
 
 <button
 class="publish"
 onclick="publishUpdate()">
 
-📢 PUBLISH ARMY RECRUITMENT RALLY LIVE UPDATE
+📢 PUBLISH LIVE UPDATE
 
 </button>
 
+
+<!-- =====================================================
+     LOGOUT
+===================================================== -->
 
 <button
 class="logout"
@@ -1999,6 +2676,7 @@ onclick="logoutAdmin()">
 LOGOUT ADMIN
 
 </button>
+
 
 </div>
 
@@ -2034,28 +2712,39 @@ Rally Live Information System
 
 <script type="module">
 
+
+/* =====================================================
+   FIREBASE IMPORTS
+===================================================== */
+
 import {
+
     initializeApp
+
 }
 from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
 
 import {
+
     getAuth,
     signInWithEmailAndPassword,
     onAuthStateChanged,
     signOut
+
 }
 from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 
 import {
+
     getFirestore,
     doc,
     setDoc,
     onSnapshot
+
 }
 from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
@@ -2092,7 +2781,7 @@ const firebaseConfig = {
 
 
 /* =====================================================
-   INITIALIZE
+   INITIALIZE FIREBASE
 ===================================================== */
 
 const app =
@@ -2104,6 +2793,10 @@ getAuth(app);
 const db =
 getFirestore(app);
 
+
+/* =====================================================
+   DATABASE
+===================================================== */
 
 const rallyRef =
 doc(
@@ -2122,20 +2815,11 @@ const ADMIN_UID =
 
 
 /* =====================================================
-   VARIABLES
+   STATUS
 ===================================================== */
 
 let selectedStatus =
 "OPEN";
-
-let selectedBatch =
-"";
-
-let selectedTimeStart =
-"";
-
-let selectedTimeEnd =
-"";
 
 
 /* =====================================================
@@ -2144,6 +2828,7 @@ let selectedTimeEnd =
 
 const isAdminPage =
 window.location.search.includes("admin");
+
 
 if(isAdminPage){
 
@@ -2186,10 +2871,12 @@ async function(){
         "loginEmail"
     ).value.trim();
 
+
     const password =
     document.getElementById(
         "loginPassword"
     ).value;
+
 
     const error =
     document.getElementById(
@@ -2217,9 +2904,11 @@ async function(){
     try{
 
         await signInWithEmailAndPassword(
+
             auth,
             email,
             password
+
         );
 
     }
@@ -2248,7 +2937,9 @@ async function(){
 ===================================================== */
 
 onAuthStateChanged(
+
     auth,
+
     (user)=>{
 
         if(!isAdminPage)
@@ -2293,6 +2984,7 @@ onAuthStateChanged(
         }
 
     }
+
 );
 
 
@@ -2312,22 +3004,31 @@ async function(){
 
 
 /* =====================================================
-   SELECT BATCH
+   STATUS SELECT
 ===================================================== */
 
-window.selectBatch =
-function(batch,button){
+window.selectStatus =
+function(
 
-    selectedBatch =
-    batch;
+    status,
+    button
+
+){
+
+    selectedStatus =
+    status;
 
 
     document
-    .querySelectorAll(".quick-btn")
+    .querySelectorAll(
+        ".status-btn"
+    )
     .forEach(btn=>{
+
         btn.classList.remove(
             "selected"
         );
+
     });
 
 
@@ -2335,96 +3036,50 @@ function(batch,button){
         "selected"
     );
 
+};
+
+
+/* =====================================================
+   QUICK BATCH
+===================================================== */
+
+window.quickBatch =
+function(batch){
 
     document.getElementById(
         "adminBatch"
     ).value =
     batch;
 
-
-    updateNextBatch();
-
 };
 
 
 /* =====================================================
-   NEXT BATCH
+   QUICK TIMELINE
 ===================================================== */
 
-function updateNextBatch(){
+window.quickTimeline =
+function(
 
-    if(!selectedBatch)
-        return;
-
-
-    const number =
-    parseInt(
-        selectedBatch
-        .replace(/\D/g,""),
-        10
-    );
-
-
-    if(!isNaN(number)){
-
-        document.getElementById(
-            "adminNextBatch"
-        ).value =
-        "Batch " +
-        String(number + 1).padStart(
-            2,
-            "0"
-        );
-
-    }
-
-}
-
-
-/* =====================================================
-   SELECT TIME SLOT
-===================================================== */
-
-window.selectTimeSlot =
-function(start,end,button){
-
-    selectedTimeStart =
-    start;
-
-    selectedTimeEnd =
-    end;
-
-
-    document
-    .querySelectorAll(".time-btn")
-    .forEach(btn=>{
-        btn.classList.remove(
-            "selected"
-        );
-    });
-
-
-    button.classList.add(
-        "selected"
-    );
-
-
-    prepareTimeline(
-        start,
-        end
-    );
-
-};
-
-
-/* =====================================================
-   PREPARE TIMELINE
-===================================================== */
-
-function prepareTimeline(
+    open,
+    ready,
     start,
-    end
+    end,
+    close
+
 ){
+
+    document.getElementById(
+        "adminOpen"
+    ).value =
+    open;
+
+
+    document.getElementById(
+        "adminReady"
+    ).value =
+    ready;
+
 
     document.getElementById(
         "adminStart"
@@ -2439,311 +3094,92 @@ function prepareTimeline(
 
 
     document.getElementById(
-        "adminReady"
-    ).value =
-    subtractMinutes(
-        start,
-        15
-    );
-
-
-    document.getElementById(
-        "adminOpen"
-    ).value =
-    subtractMinutes(
-        start,
-        30
-    );
-
-
-    document.getElementById(
         "adminClose"
     ).value =
-    addMinutes(
-        end,
-        30
-    );
+    close;
 
-}
+};
 
 
 /* =====================================================
-   STANDARD BATCH
+   START CANDIDATE PAGE UPDATE
 ===================================================== */
 
-window.prepareStandardBatch =
-function(){
+window.startRallyUpdating =
+async function(){
 
-    let start =
-    selectedTimeStart;
-
-    let end =
-    selectedTimeEnd;
+    const user =
+    auth.currentUser;
 
 
-    if(!start){
-
-        start =
-        "08:00";
-
-        end =
-        "09:00";
-
-    }
-
-
-    prepareTimeline(
-        start,
-        end
-    );
-
-
-    if(!document.getElementById(
-        "adminTrade"
-    ).value){
-
-        document.getElementById(
-            "adminTrade"
-        ).value =
-        "GD";
-
-    }
-
-
-    if(!document.getElementById(
-        "adminDistrict"
-    ).value){
-
-        document.getElementById(
-            "adminDistrict"
-        ).value =
-        "Vijayapura";
-
-    }
-
-
-    if(!document.getElementById(
-        "adminDate"
-    ).value
+    if(
+        !user ||
+        user.uid !== ADMIN_UID
     ){
 
-        const today =
-        new Date();
-
-        const yyyy =
-        today.getFullYear();
-
-        const mm =
-        String(
-            today.getMonth()+1
-        ).padStart(2,"0");
-
-        const dd =
-        String(
-            today.getDate()
-        ).padStart(2,"0");
-
-
-        document.getElementById(
-            "adminDate"
-        ).value =
-        `${yyyy}-${mm}-${dd}`;
-
-    }
-
-
-    if(!selectedBatch){
-
-        selectedBatch =
-        "Batch 01";
-
-        document.getElementById(
-            "adminBatch"
-        ).value =
-        selectedBatch;
-
-        updateNextBatch();
-
-    }
-
-};
-
-
-/* =====================================================
-   ADD MINUTES
-===================================================== */
-
-function addMinutes(
-    time,
-    minutes
-){
-
-    if(!time)
-        return "";
-
-    const parts =
-    time.split(":");
-
-    let h =
-    parseInt(parts[0],10);
-
-    let m =
-    parseInt(parts[1],10);
-
-    m += minutes;
-
-
-    while(m >= 60){
-
-        h++;
-        m -= 60;
-
-    }
-
-
-    while(h >= 24){
-
-        h -= 24;
-
-    }
-
-
-    return String(h).padStart(2,"0")
-    + ":" +
-    String(m).padStart(2,"0");
-
-}
-
-
-/* =====================================================
-   SUBTRACT MINUTES
-===================================================== */
-
-function subtractMinutes(
-    time,
-    minutes
-){
-
-    if(!time)
-        return "";
-
-    const parts =
-    time.split(":");
-
-    let h =
-    parseInt(parts[0],10);
-
-    let m =
-    parseInt(parts[1],10);
-
-    m -= minutes;
-
-
-    while(m < 0){
-
-        h--;
-        m += 60;
-
-    }
-
-
-    while(h < 0){
-
-        h += 24;
-
-    }
-
-
-    return String(h).padStart(2,"0")
-    + ":" +
-    String(m).padStart(2,"0");
-
-}
-
-
-/* =====================================================
-   QUICK STATUS
-===================================================== */
-
-window.selectStatus =
-function(status,button){
-
-    selectedStatus =
-    status;
-
-
-    document
-    .querySelectorAll(".status-btn")
-    .forEach(btn=>{
-        btn.classList.remove(
-            "selected"
-        );
-    });
-
-
-    document
-    .querySelectorAll(
-        `[data-status="${status}"]`
-    )
-    .forEach(btn=>{
-        btn.classList.add(
-            "selected"
-        );
-    });
-
-};
-
-
-/* =====================================================
-   QUICK ACTION
-===================================================== */
-
-window.quickAction =
-function(status){
-
-    selectedStatus =
-    status;
-
-
-    document
-    .querySelectorAll(".status-btn")
-    .forEach(btn=>{
-
-        btn.classList.toggle(
-            "selected",
-            btn.dataset.status ===
-            status
+        showUpdateError(
+            "You are not authorized to update the candidate page."
         );
 
-    });
-
-
-    if(status === "READY"){
-
-        document.getElementById(
-            "adminNotice"
-        ).value =
-        "Candidates get ready for the physical test.";
+        return;
 
     }
 
 
-    if(status === "RUNNING"){
+    try{
 
+        await setDoc(
+
+            rallyRef,
+
+            {
+
+                updating:true,
+
+                updatedAt:
+                new Date().toISOString()
+
+            },
+
+            {
+
+                merge:true
+
+            }
+
+        );
+
+
+        const success =
         document.getElementById(
-            "adminNotice"
-        ).value =
-        "Physical test round is starting now.";
+            "updateSuccess"
+        );
+
+
+        success.textContent =
+        "Candidate page is now showing the updating screen. You can prepare the new information.";
+
+        success.style.display =
+        "block";
+
+
+        setTimeout(()=>{
+
+            success.style.display =
+            "none";
+
+        },4000);
 
     }
 
+    catch(error){
 
-    if(status === "CLOSED"){
+        console.error(error);
 
-        document.getElementById(
-            "adminNotice"
-        ).value =
-        "Current round has been completed.";
+        showUpdateError(
+            "Could not start update: " +
+            error.message
+        );
 
     }
 
@@ -2751,22 +3187,7 @@ function(status){
 
 
 /* =====================================================
-   QUICK NOTICE
-===================================================== */
-
-window.setQuickNotice =
-function(text){
-
-    document.getElementById(
-        "adminNotice"
-    ).value =
-    text;
-
-};
-
-
-/* =====================================================
-   PUBLISH
+   PUBLISH UPDATE
 ===================================================== */
 
 window.publishUpdate =
@@ -2790,6 +3211,17 @@ async function(){
     }
 
 
+    const publishStatus =
+    document.getElementById(
+        "publishStatus"
+    );
+
+
+    publishStatus.classList.add(
+        "show"
+    );
+
+
     const data = {
 
         currentBatch:
@@ -2797,58 +3229,75 @@ async function(){
             "adminBatch"
         ).value.trim(),
 
+
         trade:
         document.getElementById(
             "adminTrade"
         ).value.trim(),
+
 
         district:
         document.getElementById(
             "adminDistrict"
         ).value.trim(),
 
+
         nextBatch:
         document.getElementById(
             "adminNextBatch"
         ).value.trim(),
+
 
         rallyDate:
         document.getElementById(
             "adminDate"
         ).value,
 
+
         groundOpen:
         document.getElementById(
             "adminOpen"
         ).value,
+
 
         readyTime:
         document.getElementById(
             "adminReady"
         ).value,
 
+
         roundStart:
         document.getElementById(
             "adminStart"
         ).value,
+
 
         roundEnd:
         document.getElementById(
             "adminEnd"
         ).value,
 
+
         groundClose:
         document.getElementById(
             "adminClose"
         ).value,
 
+
         groundStatus:
         selectedStatus,
+
 
         notice:
         document.getElementById(
             "adminNotice"
         ).value.trim(),
+
+
+        /* IMPORTANT */
+
+        updating:false,
+
 
         updatedAt:
         new Date().toISOString()
@@ -2858,37 +3307,40 @@ async function(){
 
     try{
 
-        /* Candidate update animation */
-
-        startCandidateUpdating();
-
-
         await setDoc(
+
             rallyRef,
+
             data
+
         );
 
 
+        publishStatus.classList.remove(
+            "show"
+        );
+
+
+        const success =
         document.getElementById(
             "updateSuccess"
-        ).style.display =
+        );
+
+
+        success.textContent =
+        "✓ Rally information published successfully. Candidate page is now updated.";
+
+
+        success.style.display =
         "block";
-
-
-        document.getElementById(
-            "updateError"
-        ).style.display =
-        "none";
 
 
         setTimeout(()=>{
 
-            document.getElementById(
-                "updateSuccess"
-            ).style.display =
+            success.style.display =
             "none";
 
-        },3000);
+        },4000);
 
     }
 
@@ -2897,9 +3349,17 @@ async function(){
 
         console.error(error);
 
+
+        publishStatus.classList.remove(
+            "show"
+        );
+
+
         showUpdateError(
+
             "Could not publish update: " +
             error.message
+
         );
 
     }
@@ -2914,7 +3374,9 @@ async function(){
 function loadAdminData(){
 
     onSnapshot(
+
         rallyRef,
+
         (snapshot)=>{
 
             if(!snapshot.exists())
@@ -2934,13 +3396,13 @@ function loadAdminData(){
             document.getElementById(
                 "adminTrade"
             ).value =
-            d.trade || "GD";
+            d.trade || "";
 
 
             document.getElementById(
                 "adminDistrict"
             ).value =
-            d.district || "Vijayapura";
+            d.district || "";
 
 
             document.getElementById(
@@ -3003,16 +3465,15 @@ function loadAdminData(){
             .forEach(btn=>{
 
                 btn.classList.toggle(
+
                     "selected",
+
                     btn.dataset.status ===
                     selectedStatus
+
                 );
 
             });
-
-
-            selectedBatch =
-            d.currentBatch || "";
 
         }
 
@@ -3022,11 +3483,13 @@ function loadAdminData(){
 
 
 /* =====================================================
-   CANDIDATE LISTENER
+   LIVE CANDIDATE LISTENER
 ===================================================== */
 
 onSnapshot(
+
     rallyRef,
+
     (snapshot)=>{
 
         if(!snapshot.exists())
@@ -3037,9 +3500,22 @@ onSnapshot(
         snapshot.data();
 
 
-        updateCandidatePage(d);
+        if(d.updating === true){
+
+            showCandidateUpdating();
+
+        }
+
+        else{
+
+            showCandidateData();
+
+            updateCandidatePage(d);
+
+        }
 
     },
+
 
     (error)=>{
 
@@ -3051,6 +3527,48 @@ onSnapshot(
     }
 
 );
+
+
+/* =====================================================
+   SHOW CANDIDATE UPDATE SCREEN
+===================================================== */
+
+function showCandidateUpdating(){
+
+    document.getElementById(
+        "candidateNormalContent"
+    ).style.display =
+    "none";
+
+
+    document.getElementById(
+        "candidateUpdatingScreen"
+    ).classList.add(
+        "active"
+    );
+
+}
+
+
+/* =====================================================
+   SHOW CANDIDATE DATA
+===================================================== */
+
+function showCandidateData(){
+
+    document.getElementById(
+        "candidateUpdatingScreen"
+    ).classList.remove(
+        "active"
+    );
+
+
+    document.getElementById(
+        "candidateNormalContent"
+    ).style.display =
+    "block";
+
+}
 
 
 /* =====================================================
@@ -3196,7 +3714,11 @@ function updateCandidatePage(d){
     );
 
 
-    showCandidateUpdated(
+    document.getElementById(
+        "updatedTime"
+    ).textContent =
+    "Last updated: " +
+    formatUpdatedTime(
         d.updatedAt
     );
 
@@ -3207,125 +3729,7 @@ function updateCandidatePage(d){
 
 
 /* =====================================================
-   CANDIDATE UPDATE UI
-===================================================== */
-
-function startCandidateUpdating(){
-
-    const box =
-    document.getElementById(
-        "updateStatus"
-    );
-
-
-    box.classList.remove(
-        "updated"
-    );
-
-    box.classList.add(
-        "updating"
-    );
-
-
-    document.getElementById(
-        "updateMessage"
-    ).textContent =
-    "UPDATING LIVE INFORMATION...";
-
-}
-
-
-/* =====================================================
-   SHOW UPDATED
-===================================================== */
-
-function showCandidateUpdated(
-    updatedAt
-){
-
-    const box =
-    document.getElementById(
-        "updateStatus"
-    );
-
-
-    box.classList.remove(
-        "updating"
-    );
-
-    box.classList.add(
-        "updated"
-    );
-
-
-    document.getElementById(
-        "updateMessage"
-    ).textContent =
-    "✓ UPDATED JUST NOW";
-
-
-    if(updatedAt){
-
-        document.getElementById(
-            "lastUpdated"
-        ).textContent =
-        "Last updated " +
-        formatUpdatedTime(
-            updatedAt
-        );
-
-    }
-
-
-    setTimeout(()=>{
-
-        box.classList.remove(
-            "updated"
-        );
-
-    },5000);
-
-}
-
-
-/* =====================================================
-   UPDATED TIME
-===================================================== */
-
-function formatUpdatedTime(
-iso
-){
-
-    try{
-
-        const date =
-        new Date(iso);
-
-
-        return date.toLocaleString(
-            "en-IN",
-            {
-                day:"2-digit",
-                month:"short",
-                hour:"2-digit",
-                minute:"2-digit",
-                hour12:true
-            }
-        );
-
-    }
-
-    catch{
-
-        return "just now";
-
-    }
-
-}
-
-
-/* =====================================================
-   DATE
+   FORMAT DATE
 ===================================================== */
 
 function formatDate(date){
@@ -3348,7 +3752,7 @@ function formatDate(date){
 
 
 /* =====================================================
-   TIME
+   FORMAT TIME
 ===================================================== */
 
 function formatTime(time){
@@ -3392,6 +3796,45 @@ function formatTime(time){
 
 
 /* =====================================================
+   FORMAT UPDATED TIME
+===================================================== */
+
+function formatUpdatedTime(value){
+
+    if(!value)
+        return "—";
+
+
+    try{
+
+        const date =
+        new Date(value);
+
+
+        return date.toLocaleString(
+            "en-IN",
+            {
+                day:"2-digit",
+                month:"2-digit",
+                year:"numeric",
+                hour:"2-digit",
+                minute:"2-digit",
+                second:"2-digit"
+            }
+        );
+
+    }
+
+    catch(error){
+
+        return "—";
+
+    }
+
+}
+
+
+/* =====================================================
    COUNTDOWN
 ===================================================== */
 
@@ -3406,8 +3849,14 @@ function updateCountdown(d){
 
 
     if(
-        d.groundStatus === "READY" &&
+
+        d.groundStatus ===
+        "READY"
+
+        &&
+
         d.roundStart
+
     ){
 
         targetTime =
@@ -3416,6 +3865,7 @@ function updateCountdown(d){
             d.roundStart
         );
 
+
         label =
         "Round starts in";
 
@@ -3423,8 +3873,14 @@ function updateCountdown(d){
 
 
     else if(
-        d.groundStatus === "OPEN" &&
+
+        d.groundStatus ===
+        "OPEN"
+
+        &&
+
         d.readyTime
+
     ){
 
         targetTime =
@@ -3433,6 +3889,7 @@ function updateCountdown(d){
             d.readyTime
         );
 
+
         label =
         "Candidates get ready in";
 
@@ -3440,8 +3897,14 @@ function updateCountdown(d){
 
 
     else if(
-        d.groundStatus === "RUNNING" &&
+
+        d.groundStatus ===
+        "RUNNING"
+
+        &&
+
         d.roundEnd
+
     ){
 
         targetTime =
@@ -3450,21 +3913,21 @@ function updateCountdown(d){
             d.roundEnd
         );
 
+
         label =
         "Round ends in";
 
     }
 
 
-    else if(
-        d.groundClose
-    ){
+    else if(d.groundClose){
 
         targetTime =
         createDateTime(
             d.rallyDate,
             d.groundClose
         );
+
 
         label =
         "Ground closes in";
@@ -3508,6 +3971,7 @@ function updateCountdown(d){
             ).textContent =
             "00:00:00";
 
+
             return;
 
         }
@@ -3515,20 +3979,23 @@ function updateCountdown(d){
 
         const hours =
         Math.floor(
-            diff / 3600000
+            diff /
+            3600000
         );
 
 
         const minutes =
         Math.floor(
-            (diff % 3600000) /
+            (diff %
+            3600000) /
             60000
         );
 
 
         const seconds =
         Math.floor(
-            (diff % 60000) /
+            (diff %
+            60000) /
             1000
         );
 
@@ -3537,18 +4004,18 @@ function updateCountdown(d){
             "countdown"
         ).textContent =
 
-        String(hours)
-        .padStart(2,"0")
+            String(hours)
+            .padStart(2,"0")
 
-        + ":" +
+            + ":" +
 
-        String(minutes)
-        .padStart(2,"0")
+            String(minutes)
+            .padStart(2,"0")
 
-        + ":" +
+            + ":" +
 
-        String(seconds)
-        .padStart(2,"0");
+            String(seconds)
+            .padStart(2,"0");
 
     }
 
@@ -3575,8 +4042,10 @@ function updateCountdown(d){
 ===================================================== */
 
 function createDateTime(
-date,
-time
+
+    date,
+    time
+
 ){
 
     if(!date || !time)
@@ -3591,12 +4060,10 @@ time
 
 
 /* =====================================================
-   ERROR
+   UPDATE ERROR
 ===================================================== */
 
-function showUpdateError(
-message
-){
+function showUpdateError(message){
 
     const error =
     document.getElementById(
@@ -3611,9 +4078,20 @@ message
     error.style.display =
     "block";
 
+
+    setTimeout(()=>{
+
+        error.style.display =
+        "none";
+
+    },5000);
+
 }
+
 
 </script>
 
+
 </body>
+
 </html>
