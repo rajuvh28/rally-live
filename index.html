@@ -20,10 +20,6 @@ body{
     min-height:100vh;
 }
 
-/* =====================================================
-   HEADER
-===================================================== */
-
 header{
     background:linear-gradient(135deg,#19351c,#31572c,#4f772d);
     color:white;
@@ -48,18 +44,10 @@ header p{
     font-size:14px;
 }
 
-/* =====================================================
-   MAIN
-===================================================== */
-
 .container{
     width:min(1100px,94%);
     margin:25px auto;
 }
-
-/* =====================================================
-   CARDS
-===================================================== */
 
 .card{
     background:white;
@@ -75,15 +63,6 @@ header p{
     margin-bottom:14px;
     font-size:21px;
 }
-
-.card h3{
-    margin-bottom:8px;
-    color:#31572c;
-}
-
-/* =====================================================
-   STATUS
-===================================================== */
 
 .status{
     padding:18px;
@@ -103,10 +82,6 @@ header p{
     margin-top:7px;
     font-size:15px;
 }
-
-/* =====================================================
-   GRID
-===================================================== */
 
 .grid{
     display:grid;
@@ -134,10 +109,6 @@ header p{
     color:#19351c;
 }
 
-/* =====================================================
-   NOTICE
-===================================================== */
-
 .notice{
     padding:18px;
     border-radius:15px;
@@ -157,10 +128,6 @@ header p{
     margin-bottom:6px;
 }
 
-/* =====================================================
-   BUTTONS
-===================================================== */
-
 button{
     border:0;
     border-radius:10px;
@@ -168,6 +135,18 @@ button{
     cursor:pointer;
     font-weight:bold;
     font-size:14px;
+    transition:.2s;
+}
+
+button:hover{
+    opacity:.88;
+    transform:translateY(-1px);
+}
+
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+    transform:none;
 }
 
 .btn-green{
@@ -190,20 +169,15 @@ button{
     color:white;
 }
 
-button:hover{
-    opacity:.88;
-    transform:translateY(-1px);
-}
-
 /* =====================================================
-   ADMIN LOGIN OVERLAY
+   ADMIN LOGIN
 ===================================================== */
 
 #adminLoginScreen{
     display:none;
     position:fixed;
     inset:0;
-    z-index:9999;
+    z-index:99999;
     background:
         radial-gradient(circle at top,#4f772d 0%,#19351c 45%,#071008 100%);
     align-items:center;
@@ -212,7 +186,7 @@ button:hover{
 }
 
 .login-card{
-    width:min(420px,100%);
+    width:min(430px,100%);
     background:white;
     border-radius:22px;
     padding:30px;
@@ -227,7 +201,7 @@ button:hover{
 
 .login-card h2{
     color:#19351c;
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 
 .login-card p{
@@ -271,10 +245,24 @@ button:hover{
 .login-error{
     display:none;
     margin-top:15px;
+    padding:14px;
+    border-radius:10px;
+    background:#fff0f0;
+    border:1px solid #ffbcbc;
+    color:#a00000;
+    font-size:13px;
+    font-weight:bold;
+    line-height:1.5;
+    text-align:left;
+}
+
+.login-success{
+    display:none;
+    margin-top:15px;
     padding:12px;
     border-radius:10px;
-    background:#ffe5e5;
-    color:#a00000;
+    background:#e8f7e8;
+    color:#176b1c;
     font-size:13px;
     font-weight:bold;
 }
@@ -316,6 +304,7 @@ button:hover{
     padding:20px;
     border:1px solid #d9e2d2;
     box-shadow:0 6px 20px rgba(0,0,0,.07);
+    margin-bottom:18px;
 }
 
 .admin-section h3{
@@ -367,12 +356,12 @@ button:hover{
     padding:15px;
     background:#eef5ea;
     border-radius:12px;
-    margin-top:10px;
+    margin-top:12px;
     font-weight:bold;
 }
 
 /* =====================================================
-   CLOSED / UPDATING
+   FULL SCREEN MESSAGES
 ===================================================== */
 
 .full-screen-message{
@@ -407,20 +396,12 @@ button:hover{
     line-height:1.6;
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
-
 footer{
     text-align:center;
     padding:25px 15px;
     color:#66705f;
     font-size:12px;
 }
-
-/* =====================================================
-   MOBILE
-===================================================== */
 
 @media(max-width:700px){
 
@@ -464,16 +445,18 @@ footer{
 
 <div class="container">
 
-    <div id="statusCard" class="status">
+    <div class="status">
         <div class="status-title" id="groundStatus">
             CHECKING LIVE STATUS...
         </div>
+
         <div class="status-sub" id="groundStatusSub">
             Please wait...
         </div>
     </div>
 
     <div class="card">
+
         <h2>📢 Rally Information</h2>
 
         <div class="grid">
@@ -490,7 +473,9 @@ footer{
 
             <div class="info-box">
                 <strong>Ground</strong>
-                <span id="groundName">Dr B R Ambedkar Stadium</span>
+                <span id="groundName">
+                    Dr B R Ambedkar Stadium
+                </span>
             </div>
 
             <div class="info-box">
@@ -511,12 +496,14 @@ footer{
         </div>
     </div>
 
-    <div id="noticeBox" class="card">
+    <div class="card">
+
         <h2>📢 Important Notice</h2>
 
         <div class="notice" id="noticeContent">
             Loading notice...
         </div>
+
     </div>
 
     <div class="card">
@@ -524,6 +511,7 @@ footer{
         <h2>📋 Important Instructions</h2>
 
         <div class="notice">
+
             <div class="notice-title">
                 Report 30 Minutes Before
             </div>
@@ -532,11 +520,13 @@ footer{
             <strong>30 minutes before their reporting time</strong>
             with all required original documents and admit card.
             Late entry may not be permitted.
+
         </div>
 
         <br>
 
         <div class="notice">
+
             <div class="notice-title">
                 Documents
             </div>
@@ -544,11 +534,13 @@ footer{
             Carry all required original documents,
             photocopies and your admit card as instructed
             by the recruitment authority.
+
         </div>
 
         <br>
 
         <div class="notice">
+
             <div class="notice-title">
                 Physical Test
             </div>
@@ -556,18 +548,20 @@ footer{
             Candidates should follow the official recruitment
             instructions regarding running, pull-ups and other
             physical activities.
+
         </div>
 
     </div>
 
     <div class="card">
+
         <h2>⏱ Live Rally Status</h2>
 
         <div class="grid">
 
             <div class="info-box">
                 <strong>Next Update</strong>
-                <span id="nextUpdate">LIVE</span>
+                <span>LIVE</span>
             </div>
 
             <div class="info-box">
@@ -576,6 +570,7 @@ footer{
             </div>
 
         </div>
+
     </div>
 
 </div>
@@ -590,7 +585,7 @@ footer{
 
 
 <!-- =====================================================
-     UPDATING SCREEN
+     UPDATING
 ===================================================== -->
 
 <div id="updatingScreen" style="display:none;">
@@ -623,7 +618,7 @@ footer{
 
 
 <!-- =====================================================
-     CLOSED SCREEN
+     CLOSED
 ===================================================== -->
 
 <div id="closedScreen" style="display:none;">
@@ -659,7 +654,7 @@ footer{
 
 
 <!-- =====================================================
-     ADMIN LOGIN
+     HIDDEN ADMIN LOGIN
 ===================================================== -->
 
 <div id="adminLoginScreen">
@@ -693,19 +688,28 @@ footer{
         <button
             class="login-btn"
             id="loginButton"
-            onclick="adminLogin()"
         >
             🔐 LOGIN
         </button>
 
         <button
             class="cancel-btn"
-            onclick="closeAdminLogin()"
+            id="cancelLoginButton"
         >
             CANCEL
         </button>
 
-        <div id="loginError" class="login-error"></div>
+        <div
+            id="loginError"
+            class="login-error"
+        ></div>
+
+        <div
+            id="loginSuccess"
+            class="login-success"
+        >
+            Login successful. Opening administrator panel...
+        </div>
 
     </div>
 
@@ -738,7 +742,7 @@ footer{
 
         <button
             class="btn-red"
-            onclick="adminLogout()"
+            id="logoutButton"
         >
             LOGOUT
         </button>
@@ -746,9 +750,7 @@ footer{
     </div>
 
 
-    <!-- =================================================
-         LIVE STATISTICS
-    ================================================== -->
+    <!-- STATISTICS -->
 
     <div class="admin-grid">
 
@@ -783,9 +785,7 @@ footer{
         </div>
 
 
-        <!-- =================================================
-             WEBSITE CONTROL
-        ================================================== -->
+        <!-- WEBSITE CONTROL -->
 
         <div class="admin-section">
 
@@ -795,28 +795,28 @@ footer{
 
                 <button
                     class="btn-yellow"
-                    onclick="setUpdating(true)"
+                    id="updatingButton"
                 >
                     🔄 UPDATING
                 </button>
 
                 <button
                     class="btn-green"
-                    onclick="setUpdating(false)"
+                    id="publishButton"
                 >
                     ✅ PUBLISH
                 </button>
 
                 <button
                     class="btn-red"
-                    onclick="closeWebsite()"
+                    id="closeWebsiteButton"
                 >
                     🔒 CLOSE WEBSITE
                 </button>
 
                 <button
                     class="btn-dark"
-                    onclick="openWebsite()"
+                    id="openWebsiteButton"
                 >
                     🔓 OPEN WEBSITE
                 </button>
@@ -835,9 +835,7 @@ footer{
     </div>
 
 
-    <!-- =================================================
-         RALLY INFORMATION
-    ================================================== -->
+    <!-- RALLY INFORMATION -->
 
     <div class="admin-section">
 
@@ -861,7 +859,7 @@ footer{
 
         <button
             class="btn-green"
-            onclick="saveRallyInfo()"
+            id="saveRallyButton"
         >
             💾 SAVE RALLY INFORMATION
         </button>
@@ -869,9 +867,7 @@ footer{
     </div>
 
 
-    <!-- =================================================
-         BATCH CONTROL
-    ================================================== -->
+    <!-- BATCH CONTROL -->
 
     <div class="admin-section">
 
@@ -892,17 +888,23 @@ footer{
 
         <select id="adminGateInput">
 
-            <option value="OPEN">Gate OPEN</option>
-            <option value="CLOSING">Gate CLOSING</option>
-            <option value="CLOSED">Gate CLOSED</option>
+            <option value="OPEN">
+                Gate OPEN
+            </option>
+
+            <option value="CLOSING">
+                Gate CLOSING
+            </option>
+
+            <option value="CLOSED">
+                Gate CLOSED
+            </option>
 
         </select>
 
-        <br>
-
         <button
             class="btn-green"
-            onclick="saveBatchInfo()"
+            id="saveBatchButton"
         >
             💾 UPDATE BATCH
         </button>
@@ -910,9 +912,7 @@ footer{
     </div>
 
 
-    <!-- =================================================
-         QUICK BATCH
-    ================================================== -->
+    <!-- QUICK BATCH -->
 
     <div class="admin-section">
 
@@ -920,38 +920,23 @@ footer{
 
         <div class="admin-buttons">
 
-            <button
-                class="btn-green"
-                onclick="quickBatch('Batch 1')"
-            >
+            <button class="btn-green quick-batch" data-batch="Batch 1">
                 BATCH 1
             </button>
 
-            <button
-                class="btn-green"
-                onclick="quickBatch('Batch 2')"
-            >
+            <button class="btn-green quick-batch" data-batch="Batch 2">
                 BATCH 2
             </button>
 
-            <button
-                class="btn-green"
-                onclick="quickBatch('Batch 3')"
-            >
+            <button class="btn-green quick-batch" data-batch="Batch 3">
                 BATCH 3
             </button>
 
-            <button
-                class="btn-green"
-                onclick="quickBatch('Batch 4')"
-            >
+            <button class="btn-green quick-batch" data-batch="Batch 4">
                 BATCH 4
             </button>
 
-            <button
-                class="btn-green"
-                onclick="quickBatch('Batch 5')"
-            >
+            <button class="btn-green quick-batch" data-batch="Batch 5">
                 BATCH 5
             </button>
 
@@ -960,9 +945,7 @@ footer{
     </div>
 
 
-    <!-- =================================================
-         NOTICE
-    ================================================== -->
+    <!-- NOTICE -->
 
     <div class="admin-section">
 
@@ -987,7 +970,7 @@ footer{
 
         <button
             class="btn-green"
-            onclick="saveNotice()"
+            id="publishNoticeButton"
         >
             📢 PUBLISH NOTICE
         </button>
@@ -995,9 +978,7 @@ footer{
     </div>
 
 
-    <!-- =================================================
-         STATUS
-    ================================================== -->
+    <!-- GROUND STATUS -->
 
     <div class="admin-section">
 
@@ -1006,29 +987,29 @@ footer{
         <div class="admin-buttons">
 
             <button
-                class="btn-green"
-                onclick="setGroundStatus('RALLY STARTED')"
+                class="btn-green ground-status-button"
+                data-status="RALLY STARTED"
             >
                 RALLY STARTED
             </button>
 
             <button
-                class="btn-yellow"
-                onclick="setGroundStatus('REPORTING IN PROGRESS')"
+                class="btn-yellow ground-status-button"
+                data-status="REPORTING IN PROGRESS"
             >
                 REPORTING
             </button>
 
             <button
-                class="btn-dark"
-                onclick="setGroundStatus('PHYSICAL TEST IN PROGRESS')"
+                class="btn-dark ground-status-button"
+                data-status="PHYSICAL TEST IN PROGRESS"
             >
                 PHYSICAL TEST
             </button>
 
             <button
-                class="btn-red"
-                onclick="setGroundStatus('TODAY BATCH COMPLETED')"
+                class="btn-red ground-status-button"
+                data-status="TODAY BATCH COMPLETED"
             >
                 BATCH COMPLETED
             </button>
@@ -1038,9 +1019,7 @@ footer{
     </div>
 
 
-    <!-- =================================================
-         ADMIN ACTIONS
-    ================================================== -->
+    <!-- ADMIN ACTIONS -->
 
     <div class="admin-section">
 
@@ -1050,14 +1029,14 @@ footer{
 
             <button
                 class="btn-green"
-                onclick="requestNotificationPermission()"
+                id="notificationButton"
             >
                 🔔 ENABLE NOTIFICATIONS
             </button>
 
             <button
                 class="btn-red"
-                onclick="clearNotice()"
+                id="clearNoticeButton"
             >
                 🗑 CLEAR NOTICE
             </button>
@@ -1097,10 +1076,7 @@ import {
     doc,
     setDoc,
     getDoc,
-    onSnapshot,
-    collection,
-    addDoc,
-    serverTimestamp
+    onSnapshot
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 
@@ -1110,7 +1086,8 @@ import {
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyBqY9b9M2F5fKqQn9k7v0Xw8pYhJ1L2m3N",
+    apiKey:
+        "AIzaSyBqY9b9M2F5fKqQn9k7v0Xw8pYhJ1L2m3N",
 
     authDomain:
         "rally-live-18bd3.firebaseapp.com",
@@ -1130,7 +1107,7 @@ const firebaseConfig = {
 
 
 /* =====================================================
-   ADMIN UID
+   YOUR ADMIN UID
 ===================================================== */
 
 const ADMIN_UID =
@@ -1138,7 +1115,7 @@ const ADMIN_UID =
 
 
 /* =====================================================
-   INITIALIZE
+   FIREBASE INITIALIZE
 ===================================================== */
 
 const app =
@@ -1155,7 +1132,7 @@ const rallyRef =
 
 
 /* =====================================================
-   PAGE ELEMENTS
+   ELEMENTS
 ===================================================== */
 
 const candidatePage =
@@ -1173,125 +1150,146 @@ const adminLoginScreen =
 const adminPage =
     document.getElementById("adminPage");
 
+const adminEmail =
+    document.getElementById("adminEmail");
+
+const adminPassword =
+    document.getElementById("adminPassword");
+
+const loginButton =
+    document.getElementById("loginButton");
+
+const loginError =
+    document.getElementById("loginError");
+
+const loginSuccess =
+    document.getElementById("loginSuccess");
+
 
 /* =====================================================
-   HIDDEN ADMIN LOGIN
-   CTRL + A
+   CTRL + A = ADMIN LOGIN
 ===================================================== */
 
-document.addEventListener("keydown",(event)=>{
-
-    /*
-       Ctrl + A normally means "Select All".
-
-       Here we use it as the hidden administrator
-       access shortcut.
-    */
-
-    if(
-        event.ctrlKey &&
-        event.key.toLowerCase() === "a"
-    ){
-
-        /*
-           Do not activate this when an admin page
-           is already open.
-        */
+document.addEventListener(
+    "keydown",
+    function(event){
 
         if(
-            adminPage.style.display !== "block"
+            event.ctrlKey &&
+            event.key.toLowerCase() === "a"
         ){
 
-            event.preventDefault();
+            if(
+                adminPage.style.display !== "block"
+            ){
 
-            openAdminLogin();
+                event.preventDefault();
+
+                openAdminLogin();
+
+            }
 
         }
 
     }
-
-});
+);
 
 
 /* =====================================================
    OPEN ADMIN LOGIN
 ===================================================== */
 
-window.openAdminLogin = function(){
+function openAdminLogin(){
 
     adminLoginScreen.style.display =
         "flex";
 
-    document.getElementById(
-        "adminEmail"
-    ).focus();
+    loginError.style.display =
+        "none";
 
-};
+    loginSuccess.style.display =
+        "none";
+
+    adminPassword.value = "";
+
+    setTimeout(function(){
+
+        adminEmail.focus();
+
+    },100);
+
+}
 
 
 /* =====================================================
    CLOSE ADMIN LOGIN
 ===================================================== */
 
-window.closeAdminLogin = function(){
+function closeAdminLogin(){
 
     adminLoginScreen.style.display =
         "none";
 
-    document.getElementById(
-        "loginError"
-    ).style.display = "none";
+    loginError.style.display =
+        "none";
 
-};
+    loginSuccess.style.display =
+        "none";
+
+    adminPassword.value = "";
+
+}
 
 
 /* =====================================================
-   ADMIN LOGIN
+   LOGIN
 ===================================================== */
 
-window.adminLogin = async function(){
+async function adminLogin(){
 
     const email =
-        document.getElementById(
-            "adminEmail"
-        ).value.trim();
+        adminEmail.value.trim();
 
     const password =
-        document.getElementById(
-            "adminPassword"
-        ).value;
+        adminPassword.value;
 
-    const errorBox =
-        document.getElementById(
-            "loginError"
+    loginError.style.display =
+        "none";
+
+    loginSuccess.style.display =
+        "none";
+
+
+    if(!email){
+
+        showLoginError(
+            "Please enter your Firebase admin email."
         );
-
-    const loginButton =
-        document.getElementById(
-            "loginButton"
-        );
-
-
-    if(!email || !password){
-
-        errorBox.innerText =
-            "Please enter email and password.";
-
-        errorBox.style.display =
-            "block";
 
         return;
 
     }
 
 
+    if(!password){
+
+        showLoginError(
+            "Please enter your Firebase password."
+        );
+
+        return;
+
+    }
+
+
+    loginButton.disabled =
+        true;
+
+    loginButton.innerText =
+        "⏳ CHECKING...";
+
+
     try{
-
-        loginButton.disabled = true;
-
-        loginButton.innerText =
-            "CHECKING...";
-
 
         const credential =
             await signInWithEmailAndPassword(
@@ -1305,89 +1303,246 @@ window.adminLogin = async function(){
             credential.user;
 
 
+        console.log(
+            "Firebase login successful."
+        );
+
+        console.log(
+            "Logged-in UID:",
+            user.uid
+        );
+
+
         /*
-           IMPORTANT SECURITY CHECK
+           UID CHECK
         */
 
         if(user.uid !== ADMIN_UID){
 
             await signOut(auth);
 
-            throw new Error(
-                "ACCESS_DENIED"
+            showLoginError(
+                "Firebase login succeeded, but this account is NOT the authorized administrator."
+                + "\n\n"
+                + "Logged-in UID: "
+                + user.uid
+                + "\n\n"
+                + "Required Admin UID: "
+                + ADMIN_UID
             );
+
+            return;
 
         }
 
 
-        errorBox.style.display =
-            "none";
+        /*
+           SUCCESS
+        */
 
-        adminLoginScreen.style.display =
-            "none";
-
-        candidatePage.style.display =
-            "none";
-
-        updatingScreen.style.display =
-            "none";
-
-        closedScreen.style.display =
-            "none";
-
-        adminPage.style.display =
+        loginSuccess.style.display =
             "block";
 
-        loadAdminData();
+        loginButton.innerText =
+            "✅ LOGIN SUCCESS";
+
+
+        setTimeout(function(){
+
+            adminLoginScreen.style.display =
+                "none";
+
+            candidatePage.style.display =
+                "none";
+
+            updatingScreen.style.display =
+                "none";
+
+            closedScreen.style.display =
+                "none";
+
+            adminPage.style.display =
+                "block";
+
+            loadAdminData();
+
+        },500);
 
 
     }catch(error){
 
-        console.error(error);
+        console.error(
+            "Firebase Authentication Error:",
+            error
+        );
 
-        if(error.message === "ACCESS_DENIED"){
 
-            errorBox.innerText =
-                "Access denied. This Firebase account is not authorized as administrator.";
+        /*
+           SHOW THE REAL FIREBASE ERROR
+        */
 
-        }else{
-
-            errorBox.innerText =
-                "Login failed. Check your email and password.";
-
-        }
-
-        errorBox.style.display =
-            "block";
+        showFirebaseError(error);
 
     }
 
 
-    loginButton.disabled = false;
+    loginButton.disabled =
+        false;
 
     loginButton.innerText =
         "🔐 LOGIN";
 
-};
+}
 
 
 /* =====================================================
-   AUTH STATE
+   SHOW LOGIN ERROR
 ===================================================== */
 
-onAuthStateChanged(
-    auth,
-    (user)=>{
+function showLoginError(message){
 
-        if(
-            user &&
-            user.uid === ADMIN_UID
-        ){
+    loginError.innerText =
+        message;
 
-            /*
-               Only show admin automatically
-               when admin has successfully logged in.
-            */
+    loginError.style.display =
+        "block";
+
+}
+
+
+/* =====================================================
+   FIREBASE ERROR HANDLER
+===================================================== */
+
+function showFirebaseError(error){
+
+    let message =
+        "Firebase error: " +
+        (error.code || "unknown");
+
+
+    switch(error.code){
+
+        case "auth/invalid-credential":
+
+            message =
+                "INVALID CREDENTIALS\n\n"
+                + "Firebase rejected the email or password.\n\n"
+                + "Check Firebase Authentication → Users.";
+
+            break;
+
+
+        case "auth/invalid-login-credentials":
+
+            message =
+                "INVALID LOGIN CREDENTIALS\n\n"
+                + "The email/password combination was rejected by Firebase.";
+
+            break;
+
+
+        case "auth/user-not-found":
+
+            message =
+                "USER NOT FOUND\n\n"
+                + "This email does not exist in Firebase Authentication → Users.";
+
+            break;
+
+
+        case "auth/wrong-password":
+
+            message =
+                "WRONG PASSWORD\n\n"
+                + "The Firebase account exists, but the password is incorrect.";
+
+            break;
+
+
+        case "auth/invalid-api-key":
+
+            message =
+                "INVALID FIREBASE API KEY\n\n"
+                + "The Firebase configuration in this HTML does not contain a valid API key.";
+
+            break;
+
+
+        case "auth/api-key-not-valid.-please-pass-a-valid-api-key.":
+
+            message =
+                "INVALID FIREBASE API KEY\n\n"
+                + "The API key in firebaseConfig is not valid for this Firebase project.";
+
+            break;
+
+
+        case "auth/operation-not-allowed":
+
+            message =
+                "EMAIL/PASSWORD LOGIN IS DISABLED\n\n"
+                + "Firebase Console → Authentication → Sign-in method → Email/Password → Enable.";
+
+            break;
+
+
+        case "auth/too-many-requests":
+
+            message =
+                "TOO MANY LOGIN ATTEMPTS\n\n"
+                + "Firebase temporarily blocked further attempts. Wait and try again.";
+
+            break;
+
+
+        case "auth/network-request-failed":
+
+            message =
+                "NETWORK ERROR\n\n"
+                + "Check your internet connection and try again.";
+
+            break;
+
+
+        case "auth/user-disabled":
+
+            message =
+                "USER DISABLED\n\n"
+                + "This Firebase Authentication account has been disabled.";
+
+            break;
+
+
+        default:
+
+            message =
+                "FIREBASE LOGIN ERROR\n\n"
+                + "Code: "
+                + (error.code || "unknown")
+                + "\n\n"
+                + "Message: "
+                + (error.message || "Unknown Firebase error.");
+
+    }
+
+
+    showLoginError(message);
+
+}
+
+
+/* =====================================================
+   ENTER KEY LOGIN
+===================================================== */
+
+adminPassword.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            adminLogin();
 
         }
 
@@ -1396,10 +1551,34 @@ onAuthStateChanged(
 
 
 /* =====================================================
-   ADMIN LOGOUT
+   AUTH STATE
 ===================================================== */
 
-window.adminLogout = async function(){
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        if(
+            user &&
+            user.uid === ADMIN_UID
+        ){
+
+            console.log(
+                "Authorized admin:",
+                user.uid
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+async function adminLogout(){
 
     await signOut(auth);
 
@@ -1409,63 +1588,26 @@ window.adminLogout = async function(){
     candidatePage.style.display =
         "block";
 
-};
+}
 
 
 /* =====================================================
-   FIRESTORE LIVE DATA
+   FIRESTORE LIVE LISTENER
 ===================================================== */
 
 onSnapshot(
     rallyRef,
-    (snapshot)=>{
+
+    function(snapshot){
 
         if(!snapshot.exists()){
 
-            createDefaultData();
+            /*
+               Do NOT automatically write to Firestore
+               from a candidate browser.
+            */
 
-            return;
-
-        }
-
-        const data =
-            snapshot.data();
-
-        updateCandidatePage(data);
-
-    },
-    (error)=>{
-
-        console.error(
-            "Firestore error:",
-            error
-        );
-
-        document.getElementById(
-            "groundStatus"
-        ).innerText =
-            "LIVE STATUS UNAVAILABLE";
-
-        document.getElementById(
-            "groundStatusSub"
-        ).innerText =
-            "Please try again later.";
-
-    }
-);
-
-
-/* =====================================================
-   DEFAULT DATA
-===================================================== */
-
-async function createDefaultData(){
-
-    try{
-
-        await setDoc(
-            rallyRef,
-            {
+            updateCandidatePage({
 
                 websiteClosed:false,
 
@@ -1495,20 +1637,41 @@ async function createDefaultData(){
 
                 noticeType:"normal",
 
-                lastUpdated:
-                    new Date().toLocaleString("en-IN")
+                lastUpdated:"--"
 
-            },
-            {merge:true}
+            });
+
+            return;
+
+        }
+
+
+        const data =
+            snapshot.data();
+
+        updateCandidatePage(data);
+
+    },
+
+    function(error){
+
+        console.error(
+            "Firestore error:",
+            error
         );
 
-    }catch(error){
+        document.getElementById(
+            "groundStatus"
+        ).innerText =
+            "LIVE STATUS UNAVAILABLE";
 
-        console.error(error);
+        document.getElementById(
+            "groundStatusSub"
+        ).innerText =
+            "Firestore connection error.";
 
     }
-
-}
+);
 
 
 /* =====================================================
@@ -1517,7 +1680,7 @@ async function createDefaultData(){
 
 function updateCandidatePage(data){
 
-    if(data.websiteClosed){
+    if(data.websiteClosed === true){
 
         candidatePage.style.display =
             "none";
@@ -1533,7 +1696,7 @@ function updateCandidatePage(data){
     }
 
 
-    if(data.updating){
+    if(data.updating === true){
 
         candidatePage.style.display =
             "none";
@@ -1570,7 +1733,7 @@ function updateCandidatePage(data){
         "groundStatusSub"
     ).innerText =
         data.groundStatusSub ||
-        "";
+        "Live rally information";
 
 
     document.getElementById(
@@ -1634,8 +1797,7 @@ function updateCandidatePage(data){
 
 
     /*
-       Update admin statistics if
-       admin dashboard is open.
+       Admin statistics
     */
 
     document.getElementById(
@@ -1661,35 +1823,62 @@ function updateCandidatePage(data){
     ).innerText =
         data.groundStatus || "--";
 
+
+    if(data.websiteClosed){
+
+        document.getElementById(
+            "adminWebsiteStatus"
+        ).innerText =
+            "Status: 🔒 CLOSED";
+
+    }else if(data.updating){
+
+        document.getElementById(
+            "adminWebsiteStatus"
+        ).innerText =
+            "Status: 🔄 UPDATING";
+
+    }else{
+
+        document.getElementById(
+            "adminWebsiteStatus"
+        ).innerText =
+            "Status: 🟢 LIVE";
+
+    }
+
 }
 
 
 /* =====================================================
-   ADMIN LOAD DATA
+   ADMIN LOAD
 ===================================================== */
 
 async function loadAdminData(){
+
+    if(!isAdmin()) return;
+
 
     try{
 
         const snapshot =
             await getDoc(rallyRef);
 
-        if(!snapshot.exists()){
 
-            await createDefaultData();
+        if(snapshot.exists()){
 
-            return;
+            loadAdminForm(
+                snapshot.data()
+            );
 
         }
 
-        loadAdminForm(
-            snapshot.data()
-        );
-
     }catch(error){
 
-        console.error(error);
+        console.error(
+            "Admin data error:",
+            error
+        );
 
     }
 
@@ -1750,347 +1939,7 @@ function loadAdminForm(data){
     ).value =
         data.noticeType || "normal";
 
-
-    if(data.websiteClosed){
-
-        document.getElementById(
-            "adminWebsiteStatus"
-        ).innerText =
-            "Status: 🔒 CLOSED";
-
-    }else if(data.updating){
-
-        document.getElementById(
-            "adminWebsiteStatus"
-        ).innerText =
-            "Status: 🔄 UPDATING";
-
-    }else{
-
-        document.getElementById(
-            "adminWebsiteStatus"
-        ).innerText =
-            "Status: 🟢 LIVE";
-
-    }
-
 }
-
-
-/* =====================================================
-   SAVE RALLY INFO
-===================================================== */
-
-window.saveRallyInfo = async function(){
-
-    if(!isAdmin()) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            rallyDate:
-                document.getElementById(
-                    "adminRallyDate"
-                ).value,
-
-            reportingTime:
-                document.getElementById(
-                    "adminReportingTime"
-                ).value,
-
-            groundName:
-                document.getElementById(
-                    "adminGroundName"
-                ).value,
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-    alert(
-        "Rally information updated."
-    );
-
-};
-
-
-/* =====================================================
-   SAVE BATCH
-===================================================== */
-
-window.saveBatchInfo = async function(){
-
-    if(!isAdmin()) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            currentBatch:
-                document.getElementById(
-                    "adminBatchInput"
-                ).value,
-
-            candidateCount:
-                Number(
-                    document.getElementById(
-                        "adminCandidateInput"
-                    ).value
-                ),
-
-            gateStatus:
-                document.getElementById(
-                    "adminGateInput"
-                ).value,
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-    alert(
-        "Batch information updated."
-    );
-
-};
-
-
-/* =====================================================
-   QUICK BATCH
-===================================================== */
-
-window.quickBatch = async function(batch){
-
-    if(!isAdmin()) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            currentBatch:batch,
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-};
-
-
-/* =====================================================
-   NOTICE
-===================================================== */
-
-window.saveNotice = async function(){
-
-    if(!isAdmin()) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            notice:
-                document.getElementById(
-                    "adminNotice"
-                ).value,
-
-            noticeType:
-                document.getElementById(
-                    "adminNoticeType"
-                ).value,
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-    alert(
-        "Notice published."
-    );
-
-};
-
-
-/* =====================================================
-   CLEAR NOTICE
-===================================================== */
-
-window.clearNotice = async function(){
-
-    if(!isAdmin()) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            notice:
-                "No new notice.",
-
-            noticeType:
-                "normal",
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-};
-
-
-/* =====================================================
-   GROUND STATUS
-===================================================== */
-
-window.setGroundStatus =
-async function(status){
-
-    if(!isAdmin()) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            groundStatus:status,
-
-            groundStatusSub:
-                "Live rally status update.",
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-};
-
-
-/* =====================================================
-   WEBSITE UPDATING
-===================================================== */
-
-window.setUpdating =
-async function(value){
-
-    if(!isAdmin()) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            updating:value,
-
-            websiteClosed:false,
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-};
-
-
-/* =====================================================
-   CLOSE WEBSITE
-===================================================== */
-
-window.closeWebsite =
-async function(){
-
-    if(!isAdmin()) return;
-
-
-    const confirmClose =
-        confirm(
-            "Are you sure you want to close the candidate website?"
-        );
-
-    if(!confirmClose) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            websiteClosed:true,
-
-            updating:false,
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-};
-
-
-/* =====================================================
-   OPEN WEBSITE
-===================================================== */
-
-window.openWebsite =
-async function(){
-
-    if(!isAdmin()) return;
-
-
-    await setDoc(
-        rallyRef,
-        {
-
-            websiteClosed:false,
-
-            updating:false,
-
-            lastUpdated:
-                new Date().toLocaleString(
-                    "en-IN"
-                )
-
-        },
-        {merge:true}
-    );
-
-};
 
 
 /* =====================================================
@@ -2101,6 +1950,7 @@ function isAdmin(){
 
     const user =
         auth.currentUser;
+
 
     if(
         !user ||
@@ -2115,7 +1965,422 @@ function isAdmin(){
 
     }
 
+
     return true;
+
+}
+
+
+/* =====================================================
+   SAVE RALLY INFORMATION
+===================================================== */
+
+async function saveRallyInfo(){
+
+    if(!isAdmin()) return;
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                rallyDate:
+                    document.getElementById(
+                        "adminRallyDate"
+                    ).value,
+
+                reportingTime:
+                    document.getElementById(
+                        "adminReportingTime"
+                    ).value,
+
+                groundName:
+                    document.getElementById(
+                        "adminGroundName"
+                    ).value,
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+
+        alert(
+            "Rally information updated successfully."
+        );
+
+
+    }catch(error){
+
+        alert(
+            "Could not save:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SAVE BATCH
+===================================================== */
+
+async function saveBatchInfo(){
+
+    if(!isAdmin()) return;
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                currentBatch:
+                    document.getElementById(
+                        "adminBatchInput"
+                    ).value,
+
+                candidateCount:
+                    Number(
+                        document.getElementById(
+                            "adminCandidateInput"
+                        ).value
+                    ),
+
+                gateStatus:
+                    document.getElementById(
+                        "adminGateInput"
+                    ).value,
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+
+        alert(
+            "Batch information updated."
+        );
+
+
+    }catch(error){
+
+        alert(
+            "Could not save:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   QUICK BATCH
+===================================================== */
+
+async function quickBatch(batch){
+
+    if(!isAdmin()) return;
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                currentBatch:batch,
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+    }catch(error){
+
+        alert(
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   NOTICE
+===================================================== */
+
+async function saveNotice(){
+
+    if(!isAdmin()) return;
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                notice:
+                    document.getElementById(
+                        "adminNotice"
+                    ).value,
+
+                noticeType:
+                    document.getElementById(
+                        "adminNoticeType"
+                    ).value,
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+
+        alert(
+            "Notice published."
+        );
+
+
+    }catch(error){
+
+        alert(
+            "Could not publish notice:\n" +
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CLEAR NOTICE
+===================================================== */
+
+async function clearNotice(){
+
+    if(!isAdmin()) return;
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                notice:
+                    "No new notice.",
+
+                noticeType:
+                    "normal",
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+    }catch(error){
+
+        alert(
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   GROUND STATUS
+===================================================== */
+
+async function setGroundStatus(status){
+
+    if(!isAdmin()) return;
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                groundStatus:status,
+
+                groundStatusSub:
+                    "Live rally status update.",
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+    }catch(error){
+
+        alert(
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   UPDATING
+===================================================== */
+
+async function setUpdating(value){
+
+    if(!isAdmin()) return;
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                updating:value,
+
+                websiteClosed:false,
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+    }catch(error){
+
+        alert(
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CLOSE WEBSITE
+===================================================== */
+
+async function closeWebsite(){
+
+    if(!isAdmin()) return;
+
+
+    if(
+        !confirm(
+            "Are you sure you want to close the candidate website?"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                websiteClosed:true,
+
+                updating:false,
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+    }catch(error){
+
+        alert(
+            error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   OPEN WEBSITE
+===================================================== */
+
+async function openWebsite(){
+
+    if(!isAdmin()) return;
+
+
+    try{
+
+        await setDoc(
+            rallyRef,
+            {
+
+                websiteClosed:false,
+
+                updating:false,
+
+                lastUpdated:
+                    new Date().toLocaleString(
+                        "en-IN"
+                    )
+
+            },
+            {merge:true}
+        );
+
+    }catch(error){
+
+        alert(
+            error.message
+        );
+
+    }
 
 }
 
@@ -2124,12 +2389,12 @@ function isAdmin(){
    NOTIFICATIONS
 ===================================================== */
 
-window.requestNotificationPermission =
-async function(){
+async function requestNotificationPermission(){
 
-    if(
-        !("Notification" in window)
-    ){
+    if(!isAdmin()) return;
+
+
+    if(!("Notification" in window)){
 
         alert(
             "Browser notifications are not supported."
@@ -2154,9 +2419,157 @@ async function(){
             }
         );
 
+    }else{
+
+        alert(
+            "Notification permission was not granted."
+        );
+
     }
 
-};
+}
+
+
+/* =====================================================
+   BUTTON EVENTS
+===================================================== */
+
+loginButton.addEventListener(
+    "click",
+    adminLogin
+);
+
+
+document.getElementById(
+    "cancelLoginButton"
+).addEventListener(
+    "click",
+    closeAdminLogin
+);
+
+
+document.getElementById(
+    "logoutButton"
+).addEventListener(
+    "click",
+    adminLogout
+);
+
+
+document.getElementById(
+    "saveRallyButton"
+).addEventListener(
+    "click",
+    saveRallyInfo
+);
+
+
+document.getElementById(
+    "saveBatchButton"
+).addEventListener(
+    "click",
+    saveBatchInfo
+);
+
+
+document.getElementById(
+    "publishNoticeButton"
+).addEventListener(
+    "click",
+    saveNotice
+);
+
+
+document.getElementById(
+    "clearNoticeButton"
+).addEventListener(
+    "click",
+    clearNotice
+);
+
+
+document.getElementById(
+    "updatingButton"
+).addEventListener(
+    "click",
+    function(){
+        setUpdating(true);
+    }
+);
+
+
+document.getElementById(
+    "publishButton"
+).addEventListener(
+    "click",
+    function(){
+        setUpdating(false);
+    }
+);
+
+
+document.getElementById(
+    "closeWebsiteButton"
+).addEventListener(
+    "click",
+    closeWebsite
+);
+
+
+document.getElementById(
+    "openWebsiteButton"
+).addEventListener(
+    "click",
+    openWebsite
+);
+
+
+document.getElementById(
+    "notificationButton"
+).addEventListener(
+    "click",
+    requestNotificationPermission
+);
+
+
+document.querySelectorAll(
+    ".quick-batch"
+).forEach(
+    function(button){
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                quickBatch(
+                    button.dataset.batch
+                );
+
+            }
+        );
+
+    }
+);
+
+
+document.querySelectorAll(
+    ".ground-status-button"
+).forEach(
+    function(button){
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                setGroundStatus(
+                    button.dataset.status
+                );
+
+            }
+        );
+
+    }
+);
 
 </script>
 
